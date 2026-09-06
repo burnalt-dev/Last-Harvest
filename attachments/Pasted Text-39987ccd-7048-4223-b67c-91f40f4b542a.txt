@@ -1,0 +1,48 @@
+LAST HARVEST — NEST LANCER AIM/SHOOT CHROME ONLY
+One-topic feed. Expose the same Lancer Aim/Shoot split on Monster Nest that already works on forest drop. Do not retune HP, Story, Stripekin look, Veldt floor, Nest Gasket identity, or Bay sit.
+
+Names: Gasket = companion (does not fire Lancer shots). Pilot = player with equipped lancer/lancers kit. Nest = Monster Nest combat sandbox.
+
+Context (Build status 2026-09-06 + smoke):
+- Drop: Aim lock-only + Shoot damage PASS/PARTIAL (sticky present).
+- Nest: Spawn/Fight LIVE, but **0 Aim plates / 0 Shoot plates** — Follow/Hold/Focus only. Aim/Shoot QA cannot pass on Nest until chrome parity.
+
+============================================================
+GOAL
+============================================================
+Monster Nest HUD shows **Aim** + **Shoot** for `lancer` / `lancers` kits, identical rules to drop: Aim = lock only; Shoot = only damage path; sticky then closest.
+
+============================================================
+MUST DO
+============================================================
+1) When Nest Fight is active and equipped kit is `lancer` or `lancers`, show the same two ranged chrome plates as drop: **Aim** and **Shoot** (plus existing Nest Follow/Hold/Focus if those stay).
+2) **Aim** on Nest: facing + sticky primary target only. Never fireCannon / never damage / never spend shot resources.
+3) **Shoot** on Nest: only path that calls fireCannon / deals ranged damage. Uses sticky Aim target if valid; else closestLanceFoe (same tiebreak as drop).
+4) Sticky until target dead or LOS/lock fail; then retarget closest. No targets → notice + no-op.
+5) Reuse drop Aim/Shoot handlers — do not fork a second Nest-only damage path that can drift.
+6) **Lancer kit path for Nest QA:** default Nest often loads `twohand`. Provide a way to enter Nest Fight with `lancer`/`lancers` (Nest stance/kit picker, or honor New Game / Bay equipped Lancer loadout). If kit is not Lancer, Aim/Shoot plates correctly stay hidden — do not fake plates on scythe.
+7) Sawlance / non-Lancer kits: do not invent Nest Aim/Shoot for them in this paste (Bump/Sweep stay their own).
+8) Gasket companion stays Follow/Hold/Focus — **Gasket does not fire Lancer shots**.
+9) Soft-cap: do not spawn extra unique elites just to test chrome — Stripekin/Antlerkin pack is enough.
+
+============================================================
+MUST NOT
+============================================================
+- Leave Nest without Aim/Shoot plates when lancer/lancers is equipped
+- Damage on Aim; dead Shoot plate
+- Giving Aim/Shoot to Gasket
+- Showing Aim/Shoot on twohand/scythe Nest kits
+- HP invent / denser Nest packs / warehouse on drop / unique elite invent for QA
+- Stripekin look / floor / identity / New Game mix-ins
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest with **Lancer** kit → Spawn Stripekin/Antlerkin → Fight: Aim + Shoot plates visible.
+2) Nest with **twohand** kit: Aim/Shoot plates absent (correct).
+3) Aim: foe HP unchanged; lock/facing updates.
+4) Shoot: foe HP drops; uses sticky if Aim used.
+5) Drop Aim/Shoot still PASS (no regression).
+6) Gasket still companion-small; no Gasket laser.
+
+Done when: Nest Lancer Aim/Shoot chrome matches drop rules; Balancer can feel-pass entirely inside Nest with a Lancer loadout.

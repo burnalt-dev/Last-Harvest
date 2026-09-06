@@ -1,0 +1,46 @@
+LAST HARVEST — STRIPEKIN LOOK (LESS STRIPE / LIGHT SCRAP) ONLY
+One-topic feed. Reskin Stripekin: less busy body stripes + light scavenger scrap cover (~30–40%), not knight plate. Do not retune HP/DPS, Aim/Shoot, floor tiles, Nest identity, New Game, facing, or idle anims.
+
+Names: Stripekin = first forest chaff. Gasket = companion. GasketDev = outside assistant.
+
+Concept refs:
+- concept-art/forest/stripekin.png (prior heavy-stripe)
+- concept-art/forest/stripekin-scrap-light-v3.png (target — light scrap)
+- concept-art/forest/stripekin-armored-v2.png (REJECTED — too heavy; do not match)
+
+============================================================
+GOAL
+============================================================
+Live Stripekin reads as **scavenger chaff**, not mini-Barkback: stripes on **face / mane / tail** (+ ankle peek); torso shows hide with **~30–40% scrap cover** (asymmetric shoulder + straps + belt + one arm wrap). Less zebra wallpaper than v1; far less plate than armored-v2.
+
+============================================================
+MUST DO
+============================================================
+1) Cover target: **~30–40% scrap** — asymmetric scavenged pauldron, chest straps, rope belt/pouches, one arm wrap/bracer, rag loincloth. Hide/fur still visible on most of torso.
+2) Drop full breastplate, heavy gauntlets, high gorget, and plated greaves from armored-v2. Light ankle wrap OK only if ankle stripe still peeks.
+3) Reduce full-body zebra wallpaper vs old model — mute or break torso stripe density under straps; keep strong stripes on **face / mane / tail** (+ some ankle) so packs of 3 still read “Stripekin.”
+4) Identity: zebra face cues, scrap spear, ¼-grid chaff role, name Stripekin (no goblin labels).
+5) 3D toon + dark outline — not PNG blit / sprites.
+6) Eye: amber iris OK; **Bloom-ore cyan spark** only (tiny). No Solace cyan visor bar.
+7) Cloth/straps: earth / rag tones. **No yellow caution hatch** on the foe.
+8) Scale stays small-unit — scrap does not inflate to pilot or Barkback sponge silhouette.
+
+============================================================
+MUST NOT
+============================================================
+- Knight / full cuirass / head-to-toe plating (armored-v2 path)
+- Full-body zebra wallpaper below neck
+- Barkback-tier sponge silhouette; pack of 3 must still feel like chaff
+- Goblin labels; Solace / modular p### limbs
+- HP invent / Story / Aim / Nest / floor / facing / idle mix-ins
+- Sprites / PNG blit of the sheet
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest/drop: torso mostly hide + light scrap — not a breastplated knight.
+2) Face / mane / tail (+ ankle peek) still say Stripekin in a pack of 3.
+3) Pack of 3 still reads chaff (Balancer feel), not elites.
+4) Eye cyan bloom spark only; no yellow hatch; still ¼ + scrap spear.
+
+Done when: less stripe noise, ~30–40% scavenger scrap, chaff silhouette intact.

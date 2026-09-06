@@ -1,0 +1,66 @@
+TURN AI KERNEL — full feed (copy all):
+
+```
+LAST HARVEST — TURN AI KERNEL ONLY
+One-topic feed. Add the shared turn-based AI brain for enemies + in-game Gasket. Do not retune HP/DPS sheets, Nest UI chrome, ¼-overlay lines, Bay hold profiles, Story numbers, or Survival roam rates.
+
+Names: Gasket = in-game companion (never player-walked). Pilot / Solace = player. GasketDev = outside assistant. Balancer owns final HP after feel.
+
+GOAL
+One shared AI tick for all non-pilot combat actors on Nest + drop: enemies use a small FSM + role policy; Gasket uses player **commands/stances** only (Follow / Hold / Focus). Same brain in Monster Nest and forest drop.
+
+============================================================
+MUST DO
+============================================================
+1) SHARED KERNEL (every non-pilot turn)
+   - Sense → pick target → pick one action (Move | Attack | Wait | role skill) → commit → end turn.
+   - Path/step with the correct grid: Gasket + Stripekin-class = ¼-stepper; pilot stays full-tile; large foes use their occupancy class.
+   - No omniscient map cheat — use FOV / radar / engagement rules already in play (or a simple “seen this sortie” flag if FOV missing).
+
+2) ENEMY FSM
+   - States: idle/patrol → alert → hunt → attack (optional flee later — not required for PASS).
+   - Wake/hunt on seeing pilot/Gasket or taking damage.
+   - In attack range → Attack; else Move toward target on their stepper.
+
+3) ROLE POLICY (data, forest keepers first)
+   - Stripekin (chaff): prefer adjacent pressure; pack mates; don’t play perfect 1v1 duelist.
+   - Barkback: prefer hold / face pilot; don’t endless chase.
+   - Sapjaw: prefer keep range + spit when wired; don’t suicide-close if healthy.
+   - Antlerkin / Rootwarden: stubs OK — hunt+attack until dedicated policy paste; don’t invent elite phases here if not already present.
+   - Grey out / skip roles with no mesh.
+
+4) GASKET — COMMANDS ONLY (never d-pad control)
+   - Stances (minimum): **Follow** (default) | **Hold** | **Focus**.
+   - Follow: stay near pilot on ¼-grid; attack foes engaging the pilot.
+   - Hold: stay put; act if threatened in range.
+   - Focus: prioritize selected / last-hit foe if any; else Follow rules.
+   - UI: simple Nest + drop command chips or menu — not a second Move stick.
+   - Quips stay event flavor — they must not pick the combat action.
+
+5) NEST + DROP
+   - Same AI kernel both places. Nest Spawn packs + Gasket use it.
+   - Story may bias Gasket protect/support weights later — not required in this paste; Default/Story still share the same FSM.
+
+============================================================
+MUST NOT
+============================================================
+- Player-controlled Gasket movement / second protagonist turns
+- Full behavior trees / GOAP / finger IK
+- Invent or flatten HP/DPS (Balancer owns numbers)
+- Perfect swarm flanking / wallhack pathing
+- Mix hold-profiles, Nest Gasket identity, ¼-overlay, load-scopes, Story picker copy
+- Resurrect Perception / `per`
+- Free-roam “go explore alone” Gasket stance in v1
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest → Spawn Stripekin ×3: foes hunt/attack via FSM; step on ¼ cells.
+2) Gasket Follow: stays near pilot; engages when pilot engaged.
+3) Gasket Hold: doesn’t wander; still acts if hit/adjacent threat.
+4) Gasket Focus: prefers marked/last-hit foe when set.
+5) Player never moves Gasket with Move stick.
+6) Exit Nest → drop (if easy): same command chips exist or documented as Nest-first.
+
+Done when: Nest packs + Gasket run on the shared kernel; Gasket is command-only; Stripekin teach (swarm pressure) is visible; no HP invent; pilot still the only stick-controlled actor.
+```

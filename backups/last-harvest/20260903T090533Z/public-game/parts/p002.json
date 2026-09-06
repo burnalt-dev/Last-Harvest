@@ -1,0 +1,86 @@
+{
+  "id": "p002",
+  "slot": "legs",
+  "image": "p002.png",
+  "cell": {
+    "w": 192,
+    "h": 192
+  },
+  "frames": [
+    {
+      "pose": "idle",
+      "dir": "s",
+      "x": 0,
+      "y": 0,
+      "w": 78,
+      "h": 78,
+      "origin": {
+        "x": 39,
+        "y": 7
+      },
+      "sole": 176,
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "e",
+      "x": 78,
+      "y": 0,
+      "w": 78,
+      "h": 78,
+      "origin": {
+        "x": 39,
+        "y": 7
+      },
+      "sole": 176,
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "n",
+      "x": 156,
+      "y": 0,
+      "w": 78,
+      "h": 78,
+      "origin": {
+        "x": 39,
+        "y": 7
+      },
+      "sole": 176,
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "w",
+      "x": 234,
+      "y": 0,
+      "w": 78,
+      "h": 78,
+      "origin": {
+        "x": 39,
+        "y": 7
+      },
+      "sole": 176,
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle2",
+      "dir": "s",
+      "x": 312,
+      "y": 0,
+      "w": 50,
+      "h": 78,
+      "origin": {
+        "x": 25,
+        "y": 7
+      },
+      "sole": 176,
+      "flipX": false,
+      "frame": 1
+    }
+  ]
+}

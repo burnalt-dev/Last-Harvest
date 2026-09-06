@@ -1,0 +1,56 @@
+{
+  "unit": "labor-crate",
+  "cell": { "w": 192, "h": 192 },
+  "origin": "top-left",
+  "contract": "Every part is authored against these points. A piece that cannot hit the listed socket for its slot is not modular.",
+  "foot_line_y": 176,
+  "hover_plane_y": 164,
+  "sockets_by_dir": {
+    "s": {
+      "neck": { "x": 96, "y": 44, "parent": "body", "child": "head" },
+      "shoulderL": { "x": 64, "y": 62, "parent": "body", "child": "armL" },
+      "shoulderR": { "x": 128, "y": 62, "parent": "body", "child": "armR" },
+      "hip": { "x": 96, "y": 108, "parent": "body", "child": "legs" },
+      "handL": { "x": 50, "y": 118, "parent": "armL", "child": "hand" },
+      "handR": { "x": 142, "y": 118, "parent": "armR", "child": "hand" }
+    },
+    "e": {
+      "neck": { "x": 100, "y": 46, "parent": "body", "child": "head" },
+      "shoulderL": { "x": 78, "y": 64, "parent": "body", "child": "armL" },
+      "shoulderR": { "x": 132, "y": 60, "parent": "body", "child": "armR" },
+      "hip": { "x": 98, "y": 110, "parent": "body", "child": "legs" },
+      "handL": { "x": 70, "y": 120, "parent": "armL", "child": "hand" },
+      "handR": { "x": 148, "y": 116, "parent": "armR", "child": "hand" }
+    },
+    "n": {
+      "neck": { "x": 96, "y": 44, "parent": "body", "child": "head" },
+      "shoulderL": { "x": 128, "y": 62, "parent": "body", "child": "armL" },
+      "shoulderR": { "x": 64, "y": 62, "parent": "body", "child": "armR" },
+      "hip": { "x": 96, "y": 108, "parent": "body", "child": "legs" },
+      "handL": { "x": 142, "y": 118, "parent": "armL", "child": "hand" },
+      "handR": { "x": 50, "y": 118, "parent": "armR", "child": "hand" }
+    },
+    "w": {
+      "neck": { "x": 92, "y": 46, "parent": "body", "child": "head" },
+      "shoulderL": { "x": 60, "y": 60, "parent": "body", "child": "armL" },
+      "shoulderR": { "x": 114, "y": 64, "parent": "body", "child": "armR" },
+      "hip": { "x": 94, "y": 110, "parent": "body", "child": "legs" },
+      "handL": { "x": 44, "y": 116, "parent": "armL", "child": "hand" },
+      "handR": { "x": 122, "y": 120, "parent": "armR", "child": "hand" }
+    }
+  },
+  "two_hand": {
+    "occupies": ["handL", "handR"],
+    "weapon_points": ["gripL", "gripR"],
+    "arms": "keep armL and armR meshes; both wrists snap to the hand part"
+  },
+  "notes": [
+    "South map is the calibration source. Recalibrate against canon PNGs if pixels disagree, then update this file — do not invent per-part sockets.",
+    "Two layers only: shoulder attaches the arm, hand attaches a held weapon. No elbow or finger sockets.",
+    "Integrated arm weapons use shoulder only and leave that side's hand unused.",
+    "Two-hand kits occupy BOTH handL and handR. Weapon frame stores gripL and gripR. Do not omit armL.",
+    "West may flip east across x=96 only when the kit is symmetric. Blade kit is not.",
+    "back and aux have no sockets.",
+    "Piston and reverse-joint soles sit on foot_line_y. Hover hem sits on hover_plane_y."
+  ]
+}

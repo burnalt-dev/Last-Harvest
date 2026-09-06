@@ -1,0 +1,49 @@
+LAST HARVEST — LANCER SHOOT SINGLE-PRIMARY FIX (REGRESSION)
+Researcher CLEAR 2026-09-06: paste now. Soft-cap OK (shared Stripekin prefab; no denser packs). Matches Pin forever + Nest wipe FAIL.
+One-topic feed. Prior LANCER_SHOOT_SINGLE paste FAILED Nest feel or never landed: Shoot still “Lance wide” and wiped pack×3 (0 alive / 3 dead). Kill every pack-wide / Lance-wide path on Pin Shoot. Do not retune HP, Barkback look, Withdraw, Sonic, or Nest chrome invent.
+
+Names: Pilot Lancer Aim/Shoot = Pin forever. Gasket = companion (does not shoot). Melee Sweep/Bump cleave unchanged.
+
+Balancer Nest FAIL evidence (pack×3, one tab): Aim → Shoot → pack wiped; log/path still “Lance wide.” Holding Sonic until this PASS.
+
+Canon: research/2026-09-06-projectile-rules.md — Lancer Shoot = Pin = exactly one body / one ¼ primary. Never Tile/Arc splash.
+
+============================================================
+GOAL
+============================================================
+Shoot damages **only** the locked primary’s HP. Pack×3 loses **one** body per Shoot. “Lance wide” must not exist on Pin.
+
+============================================================
+MUST DO
+============================================================
+1) Resolve Shoot damage against **exactly one** entity: sticky Aim target if valid, else closestValidFoe (+Y / |ΔX| / X). Apply HP delta to that entity only.
+2) **Hard ban:** never damage other units on the same full tile, adjacent ¼, cone, splash, AOE, or multi-hit list from Lancer Shoot / fireCannon / Pin path.
+3) Delete or bypass any Nest/drop handler named or behaving as Lance-wide / pack hit / multi-¼ / tile clear for Lancer Pin Shoot.
+4) Combat log / VFX label for Lancer Shoot must **never** say “Lance wide” — use single-target / Pin / Lancer Shoot only.
+5) If code has projectileClass, Lancer Shoot is `pin` — not `tile` / `arc` / `pierce`.
+6) Aim highlight still marks the one ¼ that will take the next Shoot.
+7) Same rules Nest + drop. Melee ≤4 / ≤12 footprints untouched.
+8) Soft-cap: no denser packs invent to “prove” cleave.
+9) Build smoke must log **entity id** of each damage target on Shoot — if >1 id receives HP delta on one Shoot, FAIL.
+10) Efficiency: reuse shared Stripekin mesh/mat; do not spawn unique mats per pack member to “fix” this.
+
+============================================================
+MUST NOT
+============================================================
+- Pack wipe / splash / wide lance / tile clear on Shoot
+- Leaving a Lance-wide fallthrough “for Nest packs”
+- Damage on Aim
+- HP invent / denser packs / Barkback / Withdraw / Sonic mix-ins
+- Turning Pin into Tile to clear Stripekin clouds (Sonic skillgram owns Tile later)
+- Unique mats per Stripekin pack member to “fix” single-primary
+
+============================================================
+QA (one tab — Nest Lancer kit)
+============================================================
+1) Spawn pack×3 Stripekin → Aim one → Shoot: **exactly 1 dead / 2 alive**; non-primary HP unchanged.
+2) Second Shoot (no re-Aim or re-Aim next): again only one primary; never 0/3 wipe from one shot.
+3) No Aim → Shoot: only closest takes damage; pack not wiped.
+4) Combat log/VFX: **no** “Lance wide” on Pin Shoot; smoke log shows **one** damage entity id.
+5) Drop Lancer same single-primary behavior (smoke if Nest busy).
+
+Done when: Balancer Nest pack×3 PASS — one Shoot = one primary only.

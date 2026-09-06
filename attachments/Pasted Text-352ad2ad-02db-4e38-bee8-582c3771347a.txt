@@ -1,0 +1,43 @@
+LAST HARVEST — BARKBACK LOOK (BEEFY SCALE REF) ONLY
+One-topic feed. Reskin Barkback to a full-tile beefy sponge that reads clearly next to Solace for modular scale. Do not retune HP/armor numbers, Nest Aim/Shoot, Stripekin, or New Game.
+
+Names: Barkback = forest armor sponge (legacy `for_husk` OK). Gasket = companion. GasketDev = outside assistant.
+
+Concept refs (ATTACH IMAGE IN GROK BUILD CHAT WITH THIS PASTE):
+- concept-art/forest/barkback-sheet-v2.png (target)
+- concept-art/forest/barkback.png (prior)
+
+============================================================
+GOAL
+============================================================
+Barkback is the **walking bunker** scale reference beside the pilot: full-tile badger×armadillo salvage shell, shield-arm + scrap mace. Bulk silhouette > cute armadillo. **Shield sponge** (soak) — not Antlerkin maul wind-up tempo. Still salvage folk — not Solace wanzer plates. Rootwarden stays the only boss body.
+
+============================================================
+MUST DO
+============================================================
+1) Full-tile occupancy (not ¼ chaff). Silhouette wider/heavier than Stripekin; readable next to Solace for Bay/Nest scale.
+2) Bark + scrap shell sponge look; shield-arm + short scrap mace.
+3) Differentiator vs Antlerkin: Barkback = **shield sponge / soak**; Antlerkin = slow maul wind-up. Do not give Barkback Antlerkin tempo/maul fantasy.
+4) 3D toon + dark outline — not PNG blit / sprites.
+5) Bloom-ore cyan spark OK; no Solace visor bar; no yellow caution hatch.
+6) Soft-cap: one Barkback prefab + paint-as-tint elite later. Nest density: **1–2 Barkbacks max** — do not spawn packs of Barkback for density.
+7) Role unchanged: armor sponge / Charge-or-regret teach. Numbers = Balancer later.
+
+============================================================
+MUST NOT
+============================================================
+- Wanzer gunmetal / Solace modular p### limbs
+- Making him Rootwarden boss or ¼-grid
+- Antlerkin wind-up maul kit on Barkback
+- Packs of Barkback for Nest density
+- HP invent / Aim/Shoot / Stripekin / floor mix-ins
+- Sprites
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest/drop: Barkback reads full-tile beefy next to Solace/pilot.
+2) Shield-arm + mace readable; name Barkback; sponge not maul-brute.
+3) Nest spawn does not dump a Barkback cloud (≤2).
+
+Done when: beefy Barkback sheet live as scale ref; soft-cap one prefab; sponge ≠ Antlerkin.

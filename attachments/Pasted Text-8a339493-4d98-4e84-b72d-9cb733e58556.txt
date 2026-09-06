@@ -1,0 +1,17 @@
+LAST HARVEST — GRIP SOCKET LAW ONLY (WEAPON SEAT FIX STEP 1)
+Independent feed. Do this task only. Do not add per-weapon hold profiles, battle-stance art, new body shells, or shoulder/foot sit sliders in this pass.
+
+Problem: universal grippers exist but weapons do not seat/hold correctly (float, wrong angle, pierce palm, sit behind wrist).
+
+Direction lock: UNIVERSAL grip shells on wrist / weapon_mount L+R. Weapons are TOOL-ONLY meshes. Fix the mount CONTRACT first so every tool parents cleanly into the grip.
+
+Must not break: always-armed handR/handL; asymmetric hands; existing gold sit including any gripScale/gripWidth/fingerLen/holdAngle/weaponSeat if present; arm shells stop before grip; hybrid shells / bones overlay if present; named skeleton sockets; Copy sit; pilot full-tile / Gasket 1/4-square; gasket_mount; no dressed-Solace base.
+
+Task:
+1) On each universal gripper, add a clear empty child marker named exactly `tool_seat` (L and R: `tool_seat` under the corresponding grip / weapon_mount). Place it at the palm clamp center where a handle should sit. Optional tiny debug gizmo in 3D Bay only (hide in play).
+2) Re-author / re-export every current hand tool so its local origin is the GRIP POINT (center of the held handle / grip span) — not blade tip, not shield center face, not barrel muzzle. At rest, tool local rotation should read as "held forward" with identity parent to `tool_seat`.
+3) Parent handR/handL weapon meshes to that side's `tool_seat` with identity transform at rest (position 0,0,0; rotation 0,0,0; scale 1). Remove ad-hoc offsets that were compensating for bad origins.
+4) Verify in 3D Bay for scythe, saw, cannon (handR) and scythe, shield (handL): handle visibly through the clamp; no systematic float behind the wrist; Swing/Turn keeps the tool glued to `tool_seat`.
+5) Do NOT tune per-weapon pitch/roll tables yet — if one weapon is still slightly off after correct origins, leave it for step 2 (hold profiles). Goal of this pass is the shared contract.
+
+Done when: both grips expose `tool_seat`; all current weapons parent there at identity rest with handle-centered origins; seating is clearly better/consistent across swaps; anims keep weapons glued; prior grip/sit systems still work.

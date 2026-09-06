@@ -1,0 +1,35 @@
+Labor crate — modular part spec (from concept + default south pose)
+
+IDENTITY (lock these)
+- Boxy riveted steel crate torso, not Gundam, not Master Chief
+- Cyan visor slit, one caution-yellow stripe
+- Piston walker legs, dark 1px SNES outline, chunky pixels
+- 3/4 top-down, same foot line on every facing
+
+SLOTS
+- head: visor / sensor block sitting on the crate lid
+- body: crate hull + yellow stripe (back plate lives on the hull, does not animate)
+- legs: piston (default) | hover | reverse-joint leap
+- armR: weapon hand
+- armL: shield on blade kit; empty on two-hand scythe/cannon
+- back: backpack / reactor (stat + skills, no pose change)
+- aux1/aux2: CPU/programs, no silhouette
+
+STARTER WEAPONS (complete kits, 4 dir)
+- blade: one door-slab shield LEFT, one short sword RIGHT. Never two shields.
+- scythe: ONE two-hand scythe. South/north = vertical pole in the right hand. East/west = full sweep.
+- cannon: ONE two-hand cannon. South = barrel toward camera on the right. Never a mirrored second gun.
+
+SHEET RULES
+- Magenta #FF00FF background
+- Entire figure including weapons inside the cell with margin
+- Overlap onto neighboring tiles at draw time is OK
+- A hard cut on the cell edge is a fail
+- Same crate scale on down / left / right / up
+- Left may be a flip of right if west is not authored
+
+FILES
+- concept-labor-forest.*  original goblin/orc page (target look)
+- concept-4dir-*.jpg      4-facing map concepts
+- default-pose-south-*.   current in-game idle, facing camera
+- default-kit-2x2-*.      south / east / north / west

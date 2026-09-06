@@ -1,0 +1,61 @@
+LAST HARVEST — PIN ONE BODY (NEST PLATE QA)
+Owner: last-harvest-combat
+bible: no
+Researcher CLEAR 2026-09-06: soft-cap OK. Balancer can read before/after/hit on data-qa=nest-pin-before|nest-pin-after|nest-pin-hit without opening the console.
+One-topic feed. Occupancy gate PASS (3×12 HP + Nest ¼ Move). Make Lancer Pin change exactly one body’s HP with Nest plate proof. Follow ops/FEED_QA_RULES.md. Do not invent Sonic, Barkback look, Withdraw, denser packs, or Hub Locks.
+
+Names: Lancer Shoot = Pin forever. Gasket = companion (does not shoot). Melee Sweep/Bump unchanged. GasketDev stamps PASS from plate evidence.
+
+Prior: console/FIX loops + “1 dead / 2 alive” false-failed when Pin ~9 vs HP 12. Occupancy now has real per-body pools.
+
+Canon: research/2026-09-06-projectile-rules.md · research/2026-09-06-quarter-occupancy-law.md · ops/FEED_QA_RULES.md
+
+============================================================
+GOAL
+============================================================
+One Nest Pin Shoot vs pack×3: exactly one entityId HP changes; pack sum drops by that hit only. Aim diamond + secondary mark readable. Balancer verifies on Nest data-qa plates in one tab — no console.
+
+============================================================
+MUST DO
+============================================================
+1) Shoot (Pin) applies HP delta to exactly one entity id (sticky/closest on Aimed diamond). Ban multi-body apply, sibling wipe, shared-pool empty.
+2) projectileClass pin. If UI says “Hit N”, N = damage to that one body.
+3) Aim: full-diamond highlight + secondary mark on the body that takes the Shoot.
+4) Nest plate / data-qa REQUIRED (not console.log):
+   - data-qa="nest-pin-before" — living {id, hp} for pack before Shoot (expect three ~12)
+   - data-qa="nest-pin-after" — same after Shoot
+   - data-qa="nest-pin-hit" — dmg=<n> id=<entityId>
+   One-tab assert: exactly one id hp differs before→after; sum(after) = sum(before) − dmg.
+5) Pack sum bar = sum of living pools only (do not regress occupancy PASS).
+6) Soft-cap: shared Stripekin prefab/mat; Nest packs 3–6; ≤~16 animated.
+7) Kill Nest toast/copy that blocks Aim/Shoot testing (untestable dead-end only) in THIS feed.
+8) Ivan opens makers lock + last-harvest-combat only.
+
+============================================================
+MUST NOT
+============================================================
+- Console-only OCC_*/PIN_DMG as Done proof
+- “1 dead / 2 alive” Done gate (chip still PASS if one body HP changed)
+- Visibility-retry FIX2/FIX3 if plate missing — put plate proof here
+- Sonic Tile / Barkback look / Withdraw / denser packs / HP invent
+- Hub Locks / Notion bible rewrite (bible: no)
+- Pasting this whole feed into Linear if leftover bugs appear
+
+============================================================
+IF LEFTOVER BUG (not a new feature)
+============================================================
+File Linear LAS-* (High if Nest-blocking): title + one-tab steps + data-qa evidence only.
+Do not spawn a visibility-retry FIX feed. Do not GitHub. Do not Notion Hub.
+GasketDev chooses LAS-only vs a new BUILD_FEED after Researcher CLEAR (CLEAR must name data-qa).
+
+============================================================
+QA (one tab — Nest Lancer kit, pack×3)
+============================================================
+1) Read data-qa="nest-pin-before": three bodies with HP.
+2) Aim diamond + secondary mark → Shoot once.
+3) Read data-qa="nest-pin-after" + "nest-pin-hit": exactly one id HP changed; sum dropped by dmg.
+4) Other two HP unchanged; no pack wipe from one Pin.
+5) Occupancy regression: 3 silhouettes + Move stick still OK.
+
+Done when: GasketDev stamps PASS from Ivan/Balancer plate evidence (chat lines OK). Do not ask Ivan to self-PASS.
+

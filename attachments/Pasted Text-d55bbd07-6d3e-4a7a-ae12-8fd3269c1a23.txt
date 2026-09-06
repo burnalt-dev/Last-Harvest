@@ -1,0 +1,32 @@
+LAST HARVEST — EXPOSE PER-WEAPON HOLD PROFILES ONLY
+Independent feed. Do this task only.
+
+Context: Socket law PASS (tools parent to tool_seat at identity). Prior hold-profiles pass PARTIAL — bay only exposed global HOLD ANGLE / WEAPON SEAT. Those globals are NOT per-weapon hold profiles.
+
+Goal: Two-layer mount DATA layer — per weaponId × hand (R|L) local offsets — editable live in gold sit and dumped in Copy sit.
+
+APPLY ORDER (explicit, required)
+1) Parent tool → tool_seat at identity
+2) Apply per-weapon×hand local hold_seat / hold_pitch / hold_roll / hold_yaw
+3) THEN apply global gold hand sit (gripScale, gripWidth, fingerLen, holdAngle, weaponSeat, etc.) on the grip assembly
+Globals must NOT replace or collapse profiles. Do not re-parent or world-bake tools during Swing/Turn.
+
+Must not break: tool_seat parenting; Swing/Turn glue; always-armed hands; asymmetric combos; hybrid shells / Bones overlay; Copy sit; pilot full-tile / Gasket 1/4-square.
+
+MUST DO
+1) Expose keys in UI + Copy sit clearly (hold_seat, hold_pitch, hold_roll, hold_yaw — or weaponId.hand.*). Defaults may start at 0; author starting values for: scythe R, scythe L, saw R, cannon R, shield L.
+2) Hand roles: handR = primary axis forward; handL = offhand; shield faces out; scythe L = mirror-sensible authored profile — NOT negate-R / Mirror-X paste.
+3) Bay can edit profiles live; Copy sit (or obvious dump) lists all four weapons’ profiles.
+4) Optional: use concept-art/battle-stances/ as angle TARGETS only — not mesh truth.
+
+MUST NOT
+1) Remount / move tool_seat / redo socket law / change handle origins “to make profiles work”
+2) Bake hands into weapons or unique skinned hands
+3) Finger IK / constraint graphs / per-weapon skeleton sockets (e.g. socket_scythe)
+4) Mix skeleton sit polish, battle-stance art import, or hybrid shell work into this feed
+5) Collapse profiles into only global HOLD ANGLE + WEAPON SEAT
+6) Mirror-X / negate Euler for L profiles
+
+QA (one tab only): rest → Bones tool_seat@handle (close range) → Swing/Turn glue → cannon+shield → Copy sit dump.
+
+Done when: gold sit exposes per-weapon hold profiles; Copy sit dumps them; starting profiles authored for the five slots above; seating reads correctly per hand role; socket law + glue preserved; globals still nudge on top of profiles.

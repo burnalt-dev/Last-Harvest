@@ -1,0 +1,44 @@
+LAST HARVEST — LANCER LASER / AIM BEAM ONLY
+One-topic feed. Visual: laser (or tracer) comes from the **live cannon barrel tip**, even while the gun moves / Aim reticle updates. Do not retune sticky Aim pick, skillgram slots, melee Sweep, Nest identity, or New Game.
+
+Names: Gasket = companion. Pilot = player. GasketDev = outside assistant.
+
+============================================================
+GOAL
+============================================================
+When Aim is active (and optionally a brief Shoot flash), draw a laser/beam from the **weapon muzzle socket** on the equipped cannon mesh to the current Aim target (or aim point). Origin must follow the barrel if the tool animates, re-aims, or the pilot turns — never from chest/hips/camera center.
+
+============================================================
+MUST DO
+============================================================
+1) Origin = barrel tip / muzzle on the live hand tool (`cannon` / Lancers L+R). Prefer existing grip/`tool_seat` muzzle helper if present; else a small forward offset on the barrel mesh.
+2) Update every frame (or Aim tick) so a moving gun / turning pilot keeps the beam attached to the barrel.
+3) End = sticky Aim target (or Aim lock point). If multi-¼ on a tile, end on the **highlighted** ¼ cell from SKILLGRAM_LANCER_AIM.
+4) Stances: `lancer`, `lancers` (both barrels if dual — each gun its own beam, or one beam from the firing barrel on Shoot). Sawlance Aim: same rule from the cannon hand only.
+5) Shoot: short intensify / tracer pulse along the same barrel→target line; don’t invent a second unrelated VFX origin.
+6) Keep it readable on iso drop + Nest; thin cyan/amber beam OK — match existing UI accent, don’t invent a new legendary orange unless Balancer asks.
+7) If no valid target / Aim cancelled: hide beam (same as Shoot notice no-op case).
+
+============================================================
+MUST NOT
+============================================================
+- Beam from pilot torso / camera / tile center
+- Static world-space laser that ignores gun motion
+- Change hit rules, pellet count, sticky target logic, or melee Sweep
+- Mix Nest identity / New Game / Withdraw / UI_CLEANUP layout rewrite
+- Make Gasket fire the laser
+
+============================================================
+QA (one tab)
+============================================================
+1) Aim with `lancer` → beam starts at barrel tip, ends on highlighted target.
+2) Turn / re-Aim while locked → beam stays glued to muzzle.
+3) `lancers` dual: beams (or firing barrel) track each cannon tip.
+4) Shoot pulse still originates from barrel; sticky/closest rules unchanged.
+5) Cancel Aim / no target → beam gone.
+
+Done when: Aim/Shoot laser visually comes from the moving gun barrel(s) to the Aim target.
+
+Researcher draft 2026-09-05 (Ivan ask): awaiting GasketDev paste + Balancer feel on color/thickness.
+
+GasketDev review: no tweak. DMed 2026-09-05. Paste after or with LANCER_AIM_SHOOT_SPLIT if that bug still live.

@@ -1,0 +1,31 @@
+{
+  "id": "p012",
+  "slot": "head",
+  "variant": "sensor",
+  "image": "p012.png",
+  "hangar_image": "p012_hangar.png",
+  "cell": { "w": 192, "h": 192 },
+  "origin": { "x": 96, "y": 44 },
+  "sole": { "y": 176 },
+  "frames": [
+    {
+      "pose": "idle",
+      "dir": "s",
+      "x": 0,
+      "y": 0,
+      "w": 64,
+      "h": 64,
+      "origin": { "x": 32, "y": 60 },
+      "sole": null,
+      "flipX": false
+    }
+  ],
+  "notes": [
+    "pose is the clip name — idle, grip, fire, later walk frames. Hangar lives in hangar_image.",
+    "origin is the socket attach point in trimmed frame local pixels",
+    "sole is foot-line y for legs; null on head/arms/weapons",
+    "flipX true means reuse the opposite side frame; do not use on blade hands",
+    "two-hand kits include armL and armR frames; weapon frames carry gripL and gripR",
+    "trim transparent borders when packing; 1px pad between frames"
+  ]
+}

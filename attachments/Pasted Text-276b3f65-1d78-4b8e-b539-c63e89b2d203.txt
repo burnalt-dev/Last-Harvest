@@ -1,0 +1,109 @@
+LAST HARVEST — GROK BUILD: NOTION DESIGN BIBLE (HOW TO WORK WITH GASKETDEV)
+
+NAMES (DO NOT CONFUSE)
+- GasketDev = Ivan’s outside design/QA assistant (writes BUILD_FEED pastes, bay QA, Linear). NOT a character in the game.
+- Gasket = the in-game companion robot (¼-square, snarky VO, survival_bonus only, Story “beefy companion”).
+Never attribute GasketDev instructions to the companion, and never rename/reskin in-game Gasket into “GasketDev.”
+
+Standing prompt (once): Notion Canon Hub is design truth. Never invent locks. If Notion and a paste conflict, ask Ivan. Player word is Wits; live key remains `per` until a rename paste. Story|Default only. Feeds change the game; Notion describes the game. You do not mark QA PASS.
+
+============================================================
+0) CONFLICT HIERARCHY
+============================================================
+1. Explicit BUILD_FEED paste = what to change THIS session.
+2. Notion locks = hard constraints a paste may not violate without asking Ivan.
+3. If Hub is missing a page you need: ASK Ivan — do not invent from chat memory, Linear tickets, or prior chat.
+4. Linear / chat are work tracking + conversation — never a second bible.
+
+============================================================
+1) SOURCE OF TRUTH SPLIT
+============================================================
+- NOTION (Canon Hub + child cards) = design bible (READ-ONLY for Grok Build).
+  GasketDev / Ivan own Hub writes. Do NOT create or edit Hub pages from Build.
+- THIS PASTE / future BUILD_FEED pastes from GasketDev = what to CHANGE in the live game this session.
+- Box offline (feeds, CSVs, MAKER_SKILLS Never-regress) = implementation detail.
+  Do NOT dump feeds/CSVs/research into Notion. Do NOT pull full feeds from Hub.
+
+============================================================
+2) OPEN THESE PAGES (EFFICIENT READ SCOPE)
+============================================================
+Stable Hub: https://app.notion.com/p/3d2b6682d92e8101a021cb8c43aeae7d
+
+At session start: open Canon Hub → Locks once.
+Open Forest / Cast cards ONLY when that domain is changing.
+Do NOT re-crawl the whole Hub before every tiny edit.
+
+Pages:
+- Last Harvest — Canon Hub
+- Locks — Difficulty · Survival · Grid
+- Tutorial Forest — Beastmen (when forest/enemies)
+- Cast — Gasket · Solace (in-game companion + pilot VO — not GasketDev)
+
+============================================================
+3) HARD LOCKS (NEVER REGRESS / NEVER INVENT AGAINST)
+============================================================
+Difficulty
+- Story | Default ONLY. No Hard mode.
+- Exact Story picker line: “Beefy companion. More health regen. Same world.”
+  (“Companion” = in-game Gasket, not GasketDev.)
+- Picker never says Wits, Survival, Perception, or “bonus stats.”
+- Same world: enemies/planets unchanged unless a paste says otherwise.
+
+Stats
+- Primaries: Sturdiness (stur), Avoidance (avo), Wits (player word).
+- Survival = quiet Wits substat only — not a fourth primary, not a feature pitch / UI talking point.
+- In-game Gasket / parts / Programs = survival_bonus / Survival +N only. No Gasket Survival primary.
+- LIVE CODE KEY for Wits is still `per` until a dedicated rename paste. Hub “never per” is aspirational. Do NOT rename `per` → `wits` without an explicit paste. Do NOT show Perception in UI.
+
+Grid
+- Pilot / crate = full tile. In-game Gasket + small foes = ¼-square.
+
+Modular (bay)
+- Hybrid shells; bones hidden in play; Bones overlay bay-only.
+- Universal grips; weapons = tools on weapon_mount; respect tool_seat / hold-profile pastes.
+- Do NOT invent new socket laws or remount tools to “match” vague Hub wording — modular truth is shipped grips + hold-profile pastes.
+- When Ivan pastes MAKER_SKILLS / Never-regress, that paste governs bay work. Notion Locks do not replace maker skills for modular sessions.
+
+Forest keepers
+- Stripekin, Antlerkin, Scrap-Hound, Rootwarden (combat pickaxe, not scythe), Barkback, Sapjaw.
+- Scrapped: Twitchkin, Wirefox — do not revive.
+
+Tone
+- Elite NPCs; humor = awkwardness, not comic-relief dumb.
+- Argue harvest math; don’t exposition-dump the apocalypse.
+- In-game Gasket stays goofy/snarky pocket companion; GasketDev is never an in-world character.
+
+============================================================
+4) GROK BUILD + GASKETDEV LOOP
+============================================================
+- GasketDev writes one-topic BUILD_FEED_*.txt (+ Linear QA tickets).
+- You implement the paste against live game AND Notion locks.
+- After changes: keep Never-regress spirit (¼-grid, Wits display, Survival nest, Story|Default, socket laws).
+- When Ivan says new build is up, GasketDev QAs — you do NOT mark PASS.
+- Enemy numbers: live/csv/paste over old ARMOR/STRUCTURE sheets.
+
+============================================================
+5) MUST-NOT (CHECKLIST)
+============================================================
+- No Hard difficulty / Perception UI / Gasket Survival primary / Twitchkin·Wirefox.
+- No dumping feeds/CSVs/research into Notion; no pulling them from Hub.
+- No treating Linear or chat as a second bible.
+- No `per`→`wits` rename without an explicit paste.
+- No invented socket laws / remounts from vague Hub text.
+- No self-declared QA PASS.
+- No renaming in-game Gasket to GasketDev or mixing assistant voice into companion VO.
+
+============================================================
+6) THIS PASTE SCOPE
+============================================================
+Process + locks instructions ONLY.
+Do not implement Story difficulty numbers, Survival roam rates, or hold profiles in this same paste — those are separate feeds.
+
+============================================================
+DONE WHEN
+============================================================
+- You will open Canon Hub → Locks at session start (domain cards only when needed).
+- You treat Hub as read-only; ask Ivan on missing pages or conflicts.
+- You distinguish GasketDev (assistant) from Gasket (in-game companion).
+- You will not invent Hard / Perception / Gasket Survival primary / scrapped beastmen / socket freelancing.
+- You will not rename `per` without an explicit paste.

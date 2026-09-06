@@ -1,0 +1,51 @@
+LAST HARVEST — AIM FULL-TILE / SHOOT ONE BODY (PIN)
+Researcher CLEAR 2026-09-06: attach ASAP. Soft-cap OK. Matches Ivan mobile lock + Pin forever + Aim-tile fallback.
+One-topic feed. Ivan lock 2026-09-06 (mobile pointing): Aim targets the **full tile**; Shoot still damages **exactly one** body on that tile (sticky Aim body if valid, else closest on tile). Do not abandon ¼ packs. Do not retune HP, Barkback look, Withdraw, or paste Sonic Tile wipe.
+
+Names: Pilot Lancer Aim/Shoot = Pin forever. Gasket does not shoot. Melee Sweep/Bump cleave unchanged. Sonic skillgram owns whole-tile wipe later.
+
+Prior: LANCER_SHOOT_SINGLE / FIX tried hard ¼ pick; Nest still Lance-wide FAIL. This is Researcher’s fallback — keep packs, soft-cap OK.
+
+Canon: research/2026-09-06-projectile-rules.md — Lancer Shoot = Pin = one body. Aim chrome may highlight full tile for touch; resolve stays Pin.
+
+============================================================
+GOAL
+============================================================
+Mobile-friendly Aim: player points at a **full tile** (diamond). Shoot resolves Pin damage to **one** occupant only. Never Lance-wide / pack wipe / Tile class on Lancer Shoot.
+
+============================================================
+MUST DO
+============================================================
+1) Aim lock selects a **full tile** (all ¼ cells of that diamond highlighted together). Readable at Nest camera / touch.
+2) Shoot damages **exactly one** entity on the Aimed tile:
+   - If a sticky primary body on that tile is still valid → that entity.
+   - Else closestValidFoe **among occupants of that tile** (+Y / |ΔX| / X among tile occupants).
+   - If Aimed tile empty of foes → no-op notice (do not splash neighbors).
+3) **Hard ban:** never apply Shoot HP delta to more than one entity id. Never same-tile splash, Lance-wide, pack hit, or Tile wipe from Lancer Shoot.
+4) Combat log/VFX: never “Lance wide”; label Pin / Lancer Shoot / single target. Smoke must log **one** damage entity id — if >1 id on one Shoot, FAIL.
+5) projectileClass for Lancer Shoot = `pin` (not tile/arc/pierce).
+6) No-Aim Shoot (if still supported): closestValidFoe globally — still exactly one body; never pack wipe.
+7) Same rules Nest + drop. Melee ≤4 / ≤12 untouched.
+8) Soft-cap: shared Stripekin prefab/mat; no denser packs invent; no unique mats per pack member to “test.”
+9) While Aim is locked on a packed tile, show a **secondary mark** on the sticky/closest body that will take the next Shoot (players must not guess which of the 3 dies).
+10) Smoke log: damage entity id count must be exactly 1 or FAIL.
+
+============================================================
+MUST NOT
+============================================================
+- Abandoning ¼ occupancy / collapsing packs to one body per tile
+- Turning Lancer Shoot into Tile wipe (Sonic owns that later)
+- Pack wipe / Lance-wide fallthrough
+- Damage on Aim
+- HP invent / Barkback / Withdraw / Sonic mix-ins
+
+============================================================
+QA (one tab — Nest Lancer kit)
+============================================================
+1) Pack×3 on one full tile → Aim that tile (whole diamond lit) + **secondary mark** on the body that will die → Shoot: **1 dead / 2 alive**; one damage entity id; no Lance wide.
+2) Second Shoot: again one body only.
+3) Aim empty tile → Shoot: no-op; neighbors untouched.
+4) Touch/mobile: Aim tile pick feels easier than single ¼ pick.
+5) Drop same Aim-tile / Shoot-one behavior.
+
+Done when: Balancer PASS — tile Aim readable + single Pin resolve; packs teach without wipe.

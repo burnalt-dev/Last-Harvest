@@ -1,0 +1,20 @@
+LAST HARVEST — MODULAR HYBRID STEP 1: DEFAULT SHELLS + BONES OVERLAY ONLY
+Independent feed. Do this task only. Do not rebuild the armature from scratch. Do not add new sit sliders or rename crane labels in this pass.
+
+Direction lock: one shared humanoid skeleton for all pilot kits. Bones are structure + sockets. In play, parts own the silhouette. High part-count catalog coming — gold rods must not poke through finished kits.
+
+Must not break: named sockets (spine, L/R arms and legs, pack_mount, core_mount, gasket_mount, skirt_ring, weapon_mount_L/R); gold sit still reshapes the skeleton; handR/handL always armed (no empty-hand requirement — keep current weapon defaults); pilot full-tile / Gasket+small enemies 1/4-square; Gasket on gasket_mount; do not restore fully dressed Solace as the underlying base.
+
+Task:
+1) Add minimal DEFAULT SHELL pieces parented to sockets (simple industrial gunmetal blockers, not fancy kits):
+   - head shell on head/neck
+   - body shell on chest/spine (covers torso cage)
+   - arms shell on upper_arm/forearm L+R (or per-side)
+   - legs shell on thigh/shin/foot L+R
+   These are the baseline covers when a slot has no fancy part. Crude blockout OK.
+2) Part dock behavior: fancy head/body/arms/legs options SWAP OVER / replace that slot's default shell. Cycling to none restores the default shell (not raw bones, not old full Solace dress).
+3) PLAY / non-bay: hide skeleton bone cylinder + joint sphere meshes. Sockets and sit still drive transforms. Player sees shells + parts + weapons only.
+4) 3D BAY: add a Bones overlay toggle (default OFF once shells exist, or ON for authoring — either OK if documented). When ON, show gold/brass armature for sit tuning WITH shells/parts still visible. When OFF, bay matches play (shells/parts/weapons only).
+5) Weapons unchanged: handR/handL stay always equipped; weapon sit knobs stay available.
+
+Done when: a kit with only default shells + starter weapons never shows raw gold bones in play; fancy parts replace shells per slot; bay can still reveal bones via overlay for slider work; sockets/sit/always-armed hands still work; no dressed-Solace base regression.

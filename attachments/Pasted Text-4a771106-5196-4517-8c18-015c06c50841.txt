@@ -1,0 +1,41 @@
+LAST HARVEST — SHOOT NO-AIM CLOSEST FALLBACK ONLY
+One-topic feed. When Lancer Shoot is pressed with no Aim lock, pick closest valid foe automatically (same tiebreak as sticky). Do not retune Nest chrome, HP, Withdraw, energy meter UI, or New Game.
+
+Names: Pilot Lancer Aim/Shoot. Gasket = companion (does not shoot).
+
+Context (Balancer feel-pass PARTIAL on drop):
+- PASS: Aim lock no damage; Shoot damages sticky target; two Program slots.
+- FAIL: no-Aim Shoot → “Lance: pick a tile” and **no** auto-closest / no damage.
+
+============================================================
+GOAL
+============================================================
+Shoot always has a damage path: sticky Aim target if valid, else **closest** valid foe. Never strand the player in a tile-pick mode that deals zero damage when foes exist.
+
+============================================================
+MUST DO
+============================================================
+1) On **Shoot** with no valid sticky Aim lock: resolve against **closest** valid foe using existing tiebreak (greatest map +Y, then least |ΔX|, then least X among ¼ on same full tile).
+2) Do **not** enter “Lance: pick a tile” as a required gate for Shoot when at least one valid foe exists.
+3) Tile-pick / Aim remains the lock UX — Aim still sets sticky; Shoot never requires a prior Aim if foes are in range.
+4) No valid foes → short notice + no-op (no false hit).
+5) Keep Aim = zero damage. Keep Nest chrome out of this paste (NEST_LANCER_AIM_SHOOT is separate).
+
+============================================================
+MUST NOT
+============================================================
+- Damage on Aim
+- Requiring Aim before every Shoot when foes exist
+- Nest Aim/Shoot plate invent in this paste
+- Withdraw / energy-meter chrome invent
+- HP invent / denser packs
+
+============================================================
+QA (one tab — drop Lancer)
+============================================================
+1) No Aim → Shoot: damages closest foe (no “pick a tile” dead-end).
+2) Aim then Shoot: still hits sticky.
+3) Aim alone: still zero damage.
+4) Empty field Shoot: notice + no-op.
+
+Done when: no-Aim Shoot always picks closest when foes exist; Balancer can re-feel to PASS.

@@ -1,0 +1,77 @@
+LAST HARVEST — NEW GAME + STANCE SELECT ONLY
+One-topic feed. New Game flow: difficulty warning + Story|Default pick, then Hub weapon-stance select. Do not retune Nest identity, Bay sit, enemy HP, AI kernel, or Drop UI cleanup here.
+
+Names: Gasket = in-game companion. Pilot = player. GasketDev = outside assistant. Balancer owns stance kit feel.
+
+============================================================
+GOAL
+============================================================
+After New Game: (1) difficulty step warns Default is hard and recommends Story if they don’t want stress; (2) stance select for the five Hub stances (hands + invisible back gate); then board.
+
+============================================================
+FLOW (exact order)
+============================================================
+1) Title → **New Game**
+2) **Difficulty step**
+3) Confirm difficulty → **Stance select** (Hub ids)
+4) Confirm → board / first sortie
+
+============================================================
+MUST DO — DIFFICULTY STEP
+============================================================
+1) Options: **Story | Default** only. No Hard.
+2) Warning: game is **difficult by design**; if you don’t want that stress, pick **Story**.
+3) Story line LOCK (exact): “Beefy companion. More health regen. Same world.”
+4) Default optional subtitle: “Fairly hard. Scarcity matters.”
+5) No Wits / Survival / Perception jargon.
+6) Story buffs = existing Story rules; Default unchanged; no buff leak.
+
+============================================================
+MUST DO — STANCE SELECT (Hub Frame & stances)
+============================================================
+1) Show after difficulty. Pilot stances only — Gasket is not a selectable character.
+2) Ship **all five** Hub stances (ids for Programs):
+
+| Card name | Stance id | Hands | Back (no mesh, equippable gate) | Back bonus | One-liner |
+|-----------|-----------|-------|----------------------------------|------------|-----------|
+| Harvest | `twohand` | Scythe both (`p018`) | `back_twohand` | small regen | Fill PACK. Wide harvest. |
+| Sawboard | `sawboard` | Saw + shield | `back_sawboard` | small regen | Bump board. No Attack plate. |
+| Sawlance | `sawlance` | Saw + cannon | `back_sawlance` | accuracy | Bump + Aim from the lance. |
+| Lancer | `lancer` | Cannon + shield | `back_lancer` | accuracy | Aim/Shoot only. |
+| Lancers | `lancers` | Dual cannon | `p020` / `back_lancers` | energy/recovery (draft) | Four half-power pellets. |
+
+3) Each card: stance name, one-liner (≤~12 words), hand silhouettes, note that back bus is included.
+4) Slice 1: **same grey shells** for all kits; only hands + back differ. Nanobot + Charge on all.
+5) Selecting a stance equips that kit for the run (drop snapshot) — not the Bay warehouse.
+6) **Hard gate:** dual cannon illegal without Lancers back (`p020`). Starter ships the back so Lancers is playable from New Game; unequipping the back later must break dual.
+7) Tutorial / Nest default highlight: **Harvest** / `twohand`.
+8) Do **not** invent HP / stur dumps on this screen — loadout + back gates only.
+9) One Confirm / Board — no accidental double New Game.
+
+Do **not** ship Harvester/Sawbones/Breach as stance ids — those names are obsolete for this screen.
+
+============================================================
+MUST NOT
+============================================================
+- Hard mode
+- Full parts catalog / Bay Bones on these screens
+- Nest sandbox controls
+- Permanent stur/avo/Wits invest dump
+- Mixing Nest identity, ¼-overlay, AI kernel, Drop UI cleanup into this paste
+- Making Gasket a selectable character
+- Resurrect Perception / `per`
+- Sixth stance “two-hand cannon” (that is Lancers)
+
+============================================================
+QA (one tab)
+============================================================
+1) New Game → difficulty warning + Story recommend + Story|Default.
+2) Story shows exact line: “Beefy companion. More health regen. Same world.”
+3) Next → five stance cards (Harvest…Lancers); Confirm Harvest boards twohand kit.
+4) Confirm Lancers → dual cannon + p020 bus equipped; removing bus later blocks dual.
+5) No Bay warehouse / Nest toolbar on these screens.
+6) Default run does not keep Story buffs.
+
+Done when: New Game always hits difficulty-with-warning, then five Hub stances with backs/gates, then board — Story|Default only.
+
+Researcher stamp 2026-09-05: CLEAR to DM. Canon clean vs Hub + Balancer v1.

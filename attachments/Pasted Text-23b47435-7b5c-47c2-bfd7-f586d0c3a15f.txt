@@ -1,0 +1,48 @@
+LAST HARVEST — WITS KEY RENAME (`per` → `wits`)
+Independent one-topic feed. Full code + save + UI alignment. Early enough to migrate once.
+
+Names: Gasket = in-game companion. GasketDev = outside assistant (not a character).
+
+Must not break: stur/avo formulas; Survival as quiet Wits substat; Story|Default; modular bay; no Hard.
+
+GOAL
+Player word and code key are both **wits**. Kill Perception / `per` everywhere. Survival stays a quiet nest under Wits (not a pitch).
+
+============================================================
+IMPLEMENTATION (ONE MIGRATION PASS)
+============================================================
+1) CODE / SCHEMAS
+- Rename pilot primary key `per` → `wits` in stats objects, derive formulas, Programs that read the primary, debug, exports.
+- Update comments/identifiers that mean this primary (not unrelated “per” words).
+- Do NOT leave dual keys (`per` and `wits` both live). One key: `wits`.
+
+2) SAVES
+- On load: if old save has `per`, map to `wits` and rewrite save (or migrate in place) — one-shot migrate.
+- Also sweep nested loadout / stash / companion blobs for leftover `per` keys.
+- New runs write `wits` only. Do NOT leave dual keys anywhere.
+- Done-when requires: load an old `per` save AND start a new run — both use `wits`.
+
+3) UI (same paste — display matches code)
+- Every player-visible Perception / PER / Per → **Wits** (sheet, tooltips, tutorials, bay labels, combat banners, Programs UI, loadout, New Game / onboarding).
+- Nest Survival under Wits (sub-line only). No fourth primary. No Survival in difficulty picker.
+- In-game Gasket: `Survival +N (filters)` bonus line only — never a Gasket Survival primary/level bar.
+- Difficulty picker unchanged: Story line stays “Beefy companion. More health regen. Same world.” — never says Wits/Survival.
+
+4) DERIVE
+- Keep existing balance formulas; swap the primary name only (e.g. survival baseline from wits; acc/radar/recovery that used per now use wits).
+- Gasket/parts/Programs still add `survival_bonus` only.
+
+5) OUT OF SCOPE (separate feeds)
+- Story difficulty numbers / Wits-start buffs
+- Survival roam rate tables
+- Hold profiles / modular bay
+- Display-only scrub as a substitute (superseded by this paste)
+
+============================================================
+DONE WHEN
+============================================================
+- No `per` pilot primary in code/schemas; key is `wits`.
+- Old save with `per` loads and migrates; new run writes `wits`.
+- UI says Wits everywhere; no Perception leftover; Survival quiet under Wits.
+- Spot-check Default + Story sheets; one-tab QA.
+- Hub may drop “aspirational `per`” language (GasketDev/Ivan update Notion after PASS).

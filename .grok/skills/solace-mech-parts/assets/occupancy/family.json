@@ -1,0 +1,21 @@
+{
+  "family": "ns-grey",
+  "cell": 384,
+  "dirs": [
+    "s",
+    "e",
+    "n",
+    "w"
+  ],
+  "hangar": "h",
+  "slots": [
+    "head",
+    "body",
+    "legs",
+    "armL",
+    "armR",
+    "hands",
+    "wrist"
+  ],
+  "wrists": "45A frozen"
+}

@@ -1,0 +1,41 @@
+LAST HARVEST — LANCER SHOOT SINGLE-PRIMARY ONLY
+One-topic feed. Lancer Shoot must damage **one** locked/closest primary ¼ foe — never wipe a pack. Strengthen Aim highlight on the chosen ¼. Do not retune HP sheets, Nest chrome invent, Withdraw, or Barkback look.
+
+Names: Pilot Lancer Aim/Shoot. Gasket = companion (does not shoot). Melee cleave stays multi-hit (separate feed).
+
+Balancer Nest feel FAIL: one Shoot wiped pack (pack hp → 0). Scale PASS. Holding HP retune until pick sticks.
+
+============================================================
+GOAL
+============================================================
+Aim/Shoot contrast vs melee cleave: **Shoot = single primary target only** on Nest and drop. Pack of 3 Stripekin on one tile loses one body per Shoot, not all three.
+
+============================================================
+MUST DO
+============================================================
+1) Shoot resolves damage against **exactly one** primary target: sticky Aim target if valid, else closestValidFoe (existing +Y/|ΔX|/X tiebreak).
+2) **Never** apply Shoot/fireCannon damage to other ¼ units on the same full tile, adjacent tiles, or “Lance wide” splash/cleave.
+3) Kill any Nest/drop path labeled Lance-wide / pack hit / multi-¼ for Lancer Shoot.
+4) Aim highlight: make the chosen ¼ **visually obvious** (bright lock ring / tint) so player sees who will take the next Shoot.
+5) Same rules Nest + drop. Melee Sweep/Bump cleave footprints unchanged (≤4 / ≤12) — do not nerf melee here.
+6) Soft-cap: no denser packs invent to “test” this.
+
+============================================================
+MUST NOT
+============================================================
+- Pack wipe / splash / wide lance on Shoot
+- Damage on Aim
+- HP invent / Gasket DPS retune (Balancer later)
+- Withdraw / Barkback / optic pulse mix-ins
+- Giving Shoot melee cleave fantasy
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest: Spawn 3 Stripekin on one/nearby tiles → Aim one → Shoot: **only that one** HP drops; other two remain.
+2) No Aim → Shoot: only closest takes damage; pack not wiped.
+3) Aim highlight readable on chosen ¼.
+4) Drop same single-primary behavior.
+5) Twohand Sweep still multi-hits (regression check optional if easy).
+
+Done when: Balancer Nest feel PASS on single-primary Shoot; pack survives a single shot.

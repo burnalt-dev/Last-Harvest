@@ -1,0 +1,65 @@
+LAST HARVEST — MONSTER NEST COMBAT SANDBOX ONLY
+One-topic feed. Turn Monster Nest from look-range viewer into a balance/combat test sandbox. Do not retune enemy HP/DPS sheets, modular bay, hold profiles, Story numbers, or Survival roam rates here.
+
+Names: Gasket = in-game companion. GasketDev = outside assistant. Balancer owns final HP/DPS after feel-pass.
+
+Live baseline (keep): title “MONSTER NEST · LOOK RANGE”; Far/Close; camera zoom; planet chips (Veldt-9 / Ossuary Prime / Brine-Khar); Canopy roster chips; arena canvas.
+
+============================================================
+GOAL
+============================================================
+Nest can spawn a chosen foe pack, reset the arena, run a short fight, and toggle Story|Default for side-by-side feel — without loading ship catalog or becoming a second Bay.
+
+============================================================
+MUST DO
+============================================================
+1) SANDBOX CONTROLS (add to Nest UI)
+   - Selected foe (from roster chips — already present).
+   - Pack size: 1 / 3 / 6 (or slider 1–8). Default 3 for Stripekin cloud teach.
+   - Buttons: **Spawn pack** · **Reset arena** · **Fight** (or auto-engage on Spawn if Fight is redundant).
+   - Difficulty in Nest: **Story | Default** (same rules as main picker). Story = beefy companion + more regen; Default unchanged. Exact Story line not required in Nest chrome — chips are enough.
+   - Optional: starter kit chip Harvester (scythe) only for now — enough for cleave teach.
+
+2) DETAIL PANEL (on foe select)
+   - Name + role one-liner (e.g. Stripekin — “Cleave chaff; don’t 1v1 the cloud.”).
+   - Readable tags (humanoid, swarm-ish, etc.).
+   - Soft counter hint (Cleaving Sweep / Charge / gap-close…) — no raw DPS sheet required.
+   - Occupancy note if small-unit (¼-grid).
+
+3) ROSTER (Canopy / forest first)
+   - Keep: Stripekin, Antlerkin, Rootwarden, Barkback.
+   - Add when meshes exist: Sapjaw, Scrap-Hound (curriculum). Grey out or hide until ready — don’t spawn missing meshes.
+   - Selecting a foe does not invent HP; use existing bands (e.g. Stripekin → for_skitter until Balancer retunes).
+
+4) LOAD SCOPE
+   - Nest is a **drop-side test scene**: may load biome tiles for the selected planet + selected enemy meshes + equipped/test kit + Gasket.
+   - MUST NOT load full parts warehouse / ship catalog browser.
+   - MUST NOT leave Nest combat packs resident when returning to ship/Bay (dispose on exit).
+   - Ship/Bay still: no Nest combat; Bay may keep 1–2 Stripekin **mannequins** for scale only (existing lock) — separate from Nest packs.
+
+5) LOOK RANGE (keep)
+   - Far / Close + camera zoom stay. Sandbox controls are additive.
+
+============================================================
+MUST NOT
+============================================================
+- Finger IK / per-enemy skeleton sockets / heavy post
+- Opening full modular catalog inside Nest
+- Auto-winning Story (Story softens attrition only; Nest Default must still teach)
+- Flattening enemy HP in this paste — Balancer owns numbers later
+- Implementing full forest drop quest / Survival events here
+- Hard mode
+- Resurrecting Perception / `per` keys
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest → Veldt-9 → Stripekin → pack 3 → Spawn: three ¼-grid chaff; name Stripekin; no goblin label.
+2) Reset clears arena; Spawn again works.
+3) Toggle Story vs Default: Story regen/companion feel differs; Default meaner; same roster/teaches.
+4) Detail panel shows tags + soft counter for selected foe.
+5) Exit Nest → ship/Bay: no Nest combat pack resident; catalog OK.
+
+Done when: Nest can spawn/reset a chosen pack, show foe teach info, toggle Story|Default, and respects load scopes — ready for Balancer feel-pass without a full forest sortie.
+
+Researcher pass 2026-09-05: shippable. Nest = drop-side sandbox; Balancer owns HP after feel. No Linear reopen.

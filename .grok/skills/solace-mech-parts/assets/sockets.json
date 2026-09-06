@@ -1,0 +1,279 @@
+{
+  "unit": "labor-crate",
+  "cell": {
+    "w": 384,
+    "h": 384
+  },
+  "origin": "top-left",
+  "contract": "Legs are a PAIR (p017 gold). Bodies author hip holes onto hipL/hipR. Never move legs to fit a body. Never split grey legs. S53. S54: legs full under body, then legs y>=legs_fore_y over body.",
+  "foot_line_y": 352,
+  "hover_plane_y": 328,
+  "sockets_by_dir": {
+    "s": {
+      "neck": {
+        "x": 192,
+        "y": 88,
+        "parent": "body",
+        "child": "head"
+      },
+      "shoulderL": {
+        "x": 128,
+        "y": 124,
+        "parent": "body",
+        "child": "armL"
+      },
+      "shoulderR": {
+        "x": 256,
+        "y": 124,
+        "parent": "body",
+        "child": "armR"
+      },
+      "hip": {
+        "x": 192,
+        "y": 121,
+        "parent": "body",
+        "child": "legs",
+        "note": "p017 crate weld. Body authored in this plant, not translated to this point."
+      },
+      "handL": {
+        "x": 100,
+        "y": 236,
+        "parent": "armL",
+        "child": "hand"
+      },
+      "handR": {
+        "x": 284,
+        "y": 236,
+        "parent": "armR",
+        "child": "hand"
+      },
+      "companion_mount": {
+        "x": 192,
+        "y": 168,
+        "parent": "body",
+        "child": "gasket"
+      },
+      "hipL": {
+        "x": 161,
+        "y": 105,
+        "parent": "body",
+        "child": "legL",
+        "note": "p017 piston top; body hole target"
+      },
+      "hipR": {
+        "x": 224,
+        "y": 104,
+        "parent": "body",
+        "child": "legR",
+        "note": "p017 piston top; body hole target"
+      }
+    },
+    "e": {
+      "neck": {
+        "x": 200,
+        "y": 92,
+        "parent": "body",
+        "child": "head"
+      },
+      "shoulderL": {
+        "x": 156,
+        "y": 128,
+        "parent": "body",
+        "child": "armL"
+      },
+      "shoulderR": {
+        "x": 264,
+        "y": 120,
+        "parent": "body",
+        "child": "armR"
+      },
+      "hip": {
+        "x": 192,
+        "y": 124,
+        "parent": "body",
+        "child": "legs",
+        "note": "p017 crate weld. Body authored in this plant, not translated to this point."
+      },
+      "handL": {
+        "x": 140,
+        "y": 240,
+        "parent": "armL",
+        "child": "hand"
+      },
+      "handR": {
+        "x": 296,
+        "y": 232,
+        "parent": "armR",
+        "child": "hand"
+      },
+      "companion_mount": {
+        "x": 168,
+        "y": 168,
+        "parent": "body",
+        "child": "gasket"
+      },
+      "hipL": {
+        "x": 158,
+        "y": 107,
+        "parent": "body",
+        "child": "legL",
+        "note": "p017 piston top; body hole target"
+      },
+      "hipR": {
+        "x": 218,
+        "y": 109,
+        "parent": "body",
+        "child": "legR",
+        "note": "p017 piston top; body hole target"
+      }
+    },
+    "n": {
+      "neck": {
+        "x": 192,
+        "y": 88,
+        "parent": "body",
+        "child": "head"
+      },
+      "shoulderL": {
+        "x": 256,
+        "y": 124,
+        "parent": "body",
+        "child": "armL"
+      },
+      "shoulderR": {
+        "x": 128,
+        "y": 124,
+        "parent": "body",
+        "child": "armR"
+      },
+      "hip": {
+        "x": 194,
+        "y": 126,
+        "parent": "body",
+        "child": "legs",
+        "note": "p017 crate weld. Body authored in this plant, not translated to this point."
+      },
+      "handL": {
+        "x": 284,
+        "y": 236,
+        "parent": "armL",
+        "child": "hand"
+      },
+      "handR": {
+        "x": 100,
+        "y": 236,
+        "parent": "armR",
+        "child": "hand"
+      },
+      "companion_mount": {
+        "x": 192,
+        "y": 200,
+        "parent": "body",
+        "child": "gasket"
+      },
+      "hipL": {
+        "x": 160,
+        "y": 109,
+        "parent": "body",
+        "child": "legL",
+        "note": "p017 piston top; body hole target"
+      },
+      "hipR": {
+        "x": 221,
+        "y": 112,
+        "parent": "body",
+        "child": "legR",
+        "note": "p017 piston top; body hole target"
+      }
+    },
+    "w": {
+      "neck": {
+        "x": 184,
+        "y": 92,
+        "parent": "body",
+        "child": "head"
+      },
+      "shoulderL": {
+        "x": 120,
+        "y": 120,
+        "parent": "body",
+        "child": "armL"
+      },
+      "shoulderR": {
+        "x": 228,
+        "y": 128,
+        "parent": "body",
+        "child": "armR"
+      },
+      "hip": {
+        "x": 194,
+        "y": 130,
+        "parent": "body",
+        "child": "legs",
+        "note": "p017 crate weld. Body authored in this plant, not translated to this point."
+      },
+      "handL": {
+        "x": 88,
+        "y": 232,
+        "parent": "armL",
+        "child": "hand"
+      },
+      "handR": {
+        "x": 244,
+        "y": 240,
+        "parent": "armR",
+        "child": "hand"
+      },
+      "companion_mount": {
+        "x": 216,
+        "y": 168,
+        "parent": "body",
+        "child": "gasket"
+      },
+      "hipL": {
+        "x": 163,
+        "y": 114,
+        "parent": "body",
+        "child": "legL",
+        "note": "p017 piston top; body hole target"
+      },
+      "hipR": {
+        "x": 223,
+        "y": 113,
+        "parent": "body",
+        "child": "legR",
+        "note": "p017 piston top; body hole target"
+      }
+    }
+  },
+  "two_hand": {
+    "occupies": [
+      "handL",
+      "handR"
+    ],
+    "weapon_points": [
+      "gripL",
+      "gripR"
+    ],
+    "arms": "keep armL and armR meshes; both wrists snap to the hand part"
+  },
+  "notes": [
+    "South map is the calibration source. Recalibrate against canon PNGs if pixels disagree, then update this file \u2014 do not invent per-part sockets.",
+    "Two layers only: shoulder attaches the arm, hand attaches a held weapon. No elbow or finger sockets.",
+    "Integrated arm weapons use shoulder only and leave that side's hand unused.",
+    "Two-hand kits occupy BOTH handL and handR. Weapon frame stores gripL and gripR. Do not omit armL.",
+    "West may flip east across x=192 only when the kit is symmetric. Blade kit is not.",
+    "back and aux have no sockets.",
+    "Piston and reverse-joint soles sit on foot_line_y. Hover hem sits on hover_plane_y.",
+    "HD pack: 384 cell, LANCZOS, no BOX/2 nearest. Matches last-harvest-terrain.",
+    "companion_mount is Gasket\u2019s seat on the body rear, not a swappable part."
+  ],
+  "companion_mount": {
+    "slot": "not a part id",
+    "who": "Gasket",
+    "note": "Rear hull. Emulator/packer must expose this. Gasket \u00bc-tile sits here when mounted. Charge always mounts first."
+  },
+  "gold_legs": "p017",
+  "legs_fore_y": 128,
+  "body_plant": "same 384 as p017; origin 0,0; sole 352; weld at hip crate. S55: never scale-drop."
+}

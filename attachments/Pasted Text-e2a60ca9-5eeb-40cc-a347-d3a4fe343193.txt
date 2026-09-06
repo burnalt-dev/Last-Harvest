@@ -1,0 +1,36 @@
+retune Default combat, enemy stats, Survival roam rates, or hold profiles.
+
+Names: Gasket = in-game companion. GasketDev = outside assistant (not a character).
+
+Must not break: stur/avo/Wits (live key `wits`), Survival as quiet Wits substat, Gasket bonuses-only, Default numbers, forest keepers, modular bay, Notion Locks (Story|Default only). Do not resurrect `per` / Perception.
+
+GOAL
+Add difficulty: Story (easy). Player fantasy: in-game Gasket is much stronger and keeps the pilot patched (FF16-style assist — companion cover + regen — not weaker enemies). Default stays the intended fairly hard experience.
+
+PLAYER-FACING COPY (exact — primary)
+- Label: Story
+- Subtitle / help (LOCK THIS LINE): "Beefy companion. More health regen. Same world."
+- Optional secondary only (not a replacement): "Gasket hits harder and keeps you patched up."
+- Do NOT mention Wits, Perception, Survival, or "bonus stats" in the difficulty picker.
+
+IMPLEMENTATION
+1) Difficulty select on New Game (and Settings if mid-run change exists). Options: Story | Default only. No Hard.
+2) If mid-run difficulty change exists: apply on next sortie / next New Game segment — NOT mid-fight — to avoid desync. Document that in UI/help if the control exists.
+3) On Story only (difficulty == Story), apply:
+   - In-game Gasket: clearly stronger combat/support (higher durability and/or support — "beefy companion").
+   - Extra pilot health regeneration (noticeable sustain). Under the hood may use large companion Wits/recovery-style bonus; UI never says Wits/Survival/Perception.
+4) No-leak: Story buffs apply ONLY while difficulty == Story. Switching to Default or starting a Default run must fully clear Story Gasket/regen modifiers — no retained Story state.
+5) Softens attrition, NOT curriculum:
+   - Same enemy HP/tags/telegraphs as Default.
+   - Forest keepers still teach: Barkback armor, Sapjaw range, Rootwarden pickaxe (and Stripekin / Antlerkin / Scrap-Hound roles unchanged).
+6) Story must NOT: flatten enemies, delete telegraphs, auto-win exploration/Survival events, make Gasket a second protagonist (no long monologues / no second-pilot turns), invent Hard mode.
+7) Default: unchanged. Spot-check one forest fight on Default after shipping — feel must match pre-Story baseline.
+8) One game tab only when playtesting. Notion Locks still bind.
+
+Done when:
+- Story appears with exact primary copy: "Beefy companion. More health regen. Same world."
+- Story runs feel easier via strong Gasket + regen; same world/enemies.
+- Default combat feel unchanged (spot-check one forest fight).
+- No Story buffs leak into Default; no Wits/Survival jargon on difficulty UI; no `per` resurrect / Perception UI.
+
+Researcher pass 2026-09-05: shippable after live-key `wits` fold (done).

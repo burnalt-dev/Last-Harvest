@@ -1,0 +1,88 @@
+LAST HARVEST — FEED + QA WORKFLOW RULES (LOCK)
+Owner: last-harvest-grid
+bible: no
+One-topic feed. Workflow lock for Grok Build / Maker Skills. Do not invent combat features, enemies, or Hub Locks rewrites in this paste. Internalize these rules for every future Last Harvest paste.
+
+Names: GasketDev = outside design/QA assistant (stamps PASS). Gasket = in-game companion. Ivan = builder (reports evidence). Balancer = feel/Nest smoke. Researcher = CLEAR + canon.
+
+Source: ops/FEED_QA_RULES.md (Ivan 2026-09-06). Caused extra pastes when ignored — treat as Never-regress.
+
+============================================================
+GOAL
+============================================================
+Grok Build follows this workflow on every BUILD_FEED: plate proof, math-safe QA, Owner+bible headers, serial one-topic, no visibility-retry FIX chains. Ivan evidence → GasketDev PASS stamp.
+
+============================================================
+MUST DO — EVERY FEED
+============================================================
+1) HEADER (required on every feed):
+   LAST HARVEST — <TOPIC>
+   Owner: last-harvest-<skill>
+   bible: <topic>   OR   bible: no
+   One-topic feed. …
+
+   Owner examples: last-harvest-grid (¼/occupancy/move), last-harvest-combat (Pin/Aim).
+   Ivan opens makers lock + that ONE sister skill only — not three full skills for a short patch.
+
+2) bible: no means do NOT rewrite Hub Locks / Notion bible on this paste. bible: <topic> only when that slice is intentionally in scope.
+
+3) PROOF ON THE PLATE, NOT CONSOLE:
+   Balancer/Ivan QA = one game tab. console.log (OCC_*, PIN_DMG, …) is invisible.
+   If QA needs an assert (uniqueIds===3, one HP changed, …), require a visible Nest data-qa / plate line in THIS feed.
+   Example: data-qa="nest-pin-before" | "nest-pin-after" | "nest-pin-hit"
+
+4) QA NUMBERS MATCH LIVE MATH:
+   Do not use “1 dead / 2 alive” as Done when Pin dmg 9 vs body HP 12 (false fail).
+   Prefer: “exactly one body HP changes; pack sum drops by that hit.”
+   One-shot language only after Balancer confirms Pin dmg >= body HP.
+
+5) DEAD-END COPY:
+   One-topic default. Exception: kill leftover UI copy that makes the topic untestable (e.g. “No Move stick”) IN THE SAME FEED.
+
+6) CADENCE:
+   Serial one-topic is correct.
+   Do NOT serial-retry visibility (no FIX2/FIX3 just to make console louder). Put data-qa in the first feed.
+
+7) PASS WORKFLOW:
+   Ivan reports evidence (chat spawn/step/plate lines OK).
+   GasketDev stamps PASS.
+   Do not ask Ivan to PASS unless plate text is in the paste and readable in one tab.
+
+8) RESEARCHER CLEAR (when Nest/Balancer must verify) must include a line like:
+   Balancer can read <X> on data-qa=<selector> without opening the console.
+   No CLEAR without that concrete data-qa when Balancer verifies.
+
+============================================================
+MUST NOT
+============================================================
+- Console-only smoke as Done proof
+- False “1 dead / 2 alive” gates vs live chip math
+- Visibility-retry FIX loops for louder logs
+- Rewriting Hub Locks on bible: no pastes
+- Asking Ivan to self-PASS without plate text in the feed
+- Bundling unrelated topics to “save pastes”
+
+============================================================
+REQUIRED HEADER TEMPLATE (copy into future feeds)
+============================================================
+LAST HARVEST — <TOPIC>
+Owner: last-harvest-<skill>
+bible: <topic>|no
+One-topic feed. …
+
+============================================================
+PRE-ATTACH CHECKLIST (GasketDev / Build)
+============================================================
+- Plate/data-qa proof if Balancer must verify
+- Researcher CLEAR can name that data-qa (no console)
+- Not a visibility-retry of a console-only prior paste
+- QA wording matches live dmg/HP
+- Untestable dead-end strings killed in-topic
+- Owner + bible in header
+- PASS owned by GasketDev after Ivan evidence
+
+============================================================
+QA FOR THIS WORKFLOW PASTE
+============================================================
+Done when: Grok Build / Maker session acknowledges these rules and applies them to subsequent one-topic feeds (no game Nest smoke required for this meta feed).
+

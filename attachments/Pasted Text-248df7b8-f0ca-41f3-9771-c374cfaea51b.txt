@@ -1,0 +1,35 @@
+LAST HARVEST — MONSTER NEST GASKET GOLD SIT ONLY
+One-topic feed. Add gold sit markers in Monster Nest so Gasket proportions/scale can be tuned for ideal size vs ¼-grid foes. Do not retune enemy HP, Nest combat controls, Bay sit, hold profiles, or Story numbers.
+
+Names: Gasket = in-game companion. GasketDev = outside assistant.
+
+Context: Nest is becoming a combat sandbox (Spawn/Reset/Fight). Ivan wants Nest gold sit for Gasket to find ideal size next to Stripekin / small units.
+
+GOAL
+In Monster Nest, expose gold sit (Bones-style / sit sliders) for Gasket only so Balancer/bay authoring can test scale against spawned packs. Persist a Nest-authoring Gasket sit profile without breaking play Gasket on drops.
+
+MUST DO
+1) Nest UI: toggle or panel “Gasket sit” (gold markers on Gasket mesh in Nest only).
+2) Sit controls enough to judge size: overall scale (or height), body thick/width, stance width if cheap — include in a Nest Copy sit (or Nest-Gasket dump) JSON.
+3) Optional preset: “Nest yardstick” — target readable next to Stripekin (¼-grid chaff); Gasket stays companion-small, not pilot-scale.
+4) Apply live in Nest while packs are spawned so scale vs foes is visible.
+5) Scope: Nest authoring only. Leaving Nest must not leave gold markers in play/drop UI. Play/drop Gasket uses locked companion sit unless Ivan later promotes Nest yardstick to canon.
+6) Keep Gasket on ¼-square occupancy (Never-regress). Sit changes silhouette/scale authoring — do not make him full-tile.
+
+MUST NOT
+- Remount pilot skeleton / hold profiles / tool_seat
+- Open ship parts catalog in Nest
+- Finger IK
+- Change Stripekin / foe HP or Nest Spawn/Reset/Fight (separate feed)
+- Make Gasket a second protagonist or pilot-sized
+- Resurrect Perception / `per`
+- Mix Story retune or Survival roam
+
+QA (one tab)
+1) Nest → Spawn Stripekin pack 3 → Gasket sit ON → change scale/width: Gasket resizes live; foes unchanged.
+2) Copy/dump Nest-Gasket sit works.
+3) Exit Nest → Bay/play: no Nest gold Gasket overlay left on; Gasket still ¼-grid.
+
+Done when: Nest can author Gasket proportions against live packs for ideal size tests without touching Bay modular or enemy sheets.
+
+Researcher pass 2026-09-05: shippable. Nest yardstick = authoring only until Ivan promotes to play/drop. Separate from MONSTER_NEST_TEST.

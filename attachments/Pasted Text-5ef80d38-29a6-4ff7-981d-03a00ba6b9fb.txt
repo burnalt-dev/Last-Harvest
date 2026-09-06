@@ -1,0 +1,21 @@
+LAST HARVEST — UNIVERSAL DEFAULT GRIP SHELLS + HAND GOLD SIT ONLY
+Independent feed. Do this task only. Do not redesign body/leg shells, rename crane labels, or add shoulder/foot/hips presets in this pass.
+
+Direction lock: pilot hands are always armed. UNIVERSAL grip shell on each wrist / weapon_mount (L and R). Weapons are tool meshes only that snap into the grip. Do NOT bake a unique hand into every weapon. Rare grip overrides OUT OF SCOPE. Add new gold-standard sit sliders so grips can be fine-tuned live in 3D Bay.
+
+Must not break: hybrid shells direction if present; named sockets including weapon_mount_L/R; existing gold sit (chest/hip/shoulder/neck/arms/legs/weapon tool knobs); always-armed handR/handL; asymmetric hands; Copy sit JSON; pilot full-tile / Gasket 1/4-square; gasket_mount; no dressed-Solace base regression.
+
+Task:
+1) Add a minimal industrial DEFAULT GRIPPER shell (readable clamp/three-finger palm) on BOTH wrists — parent to weapon_mount_R and weapon_mount_L (or wrist_R/L if that is the true hold socket; pick one, stay consistent).
+2) Refit handR/handL weapons as TOOL-ONLY meshes attached to the grip/weapon_mount. Remove baked-in hand geometry from scythe/saw/cannon/shield if present.
+3) Arm shells cover upper arm + forearm only and STOP before the grip. Swapping arms must not delete grips or weapons.
+4) NEW gold sit sliders (Solace-gold panel, live, in Copy sit JSON) for the universal grips — mirrored L/R unless noted:
+   - gripScale — overall hand size
+   - gripWidth — palm / clamp width
+   - fingerLen — finger or clamp reach
+   - holdAngle — wrist pitch toward tool (fine aim of hold)
+   - weaponSeat — how far the tool seats into the grip along the mount axis
+   Keep existing tool knobs (snath, grip spread, crescent, etc.) for the weapon mesh; do not replace them — hand sit is separate.
+5) Bay: changing these sliders updates both default grips in real time. Reset gold restores hand sit defaults with the rest of sit.
+
+Done when: both wrists show universal grippers; weapon swaps only change tools; arm swaps leave grips; new hand gold sliders fine-tune grips live and appear in Copy sit; always-armed + sockets + prior sit still work.

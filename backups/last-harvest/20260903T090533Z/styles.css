@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c1014;
+  --color-surface: #161c22;
+  --color-plate: #1e272f;
+  --color-fg: #e6dcc8;
+  --color-muted: #8a8476;
+  --color-brass: #c9a227;
+  --color-cyan: #5ee0d0;
+  --color-rust: #9a4030;
+  --color-border: #3a3328;
+  --color-ok: #7dba6a;
+  --font-display: "Chakra Petch", "Segoe UI", sans-serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html, body, #app { height: 100%; background: var(--color-bg); color: var(--color-fg); }
+  body { font-family: var(--font-display); margin: 0; }
+}
+
+.plate {
+  background: linear-gradient(180deg, #2a343c 0%, #161c22 42%, #12181e 100%);
+  border: 1px solid #5a4a2a;
+  box-shadow: inset 0 1px 0 #3e4a54, inset 0 -2px 0 #0a0d10, 0 2px 0 #0a0d10;
+  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+}
+.plate-press:active { transform: translateY(1px); }
+.engraved { letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-brass); }
+
+.iso-pad {
+  width: 168px; height: 168px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;
+  place-items: center; pointer-events: auto;
+}
+.iso-dir {
+  width: 56px; height: 56px; padding: 0; border: 0; color: var(--color-brass);
+  background: linear-gradient(135deg, #3a464e 0%, #161c22 48%, #0e1318 100%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.iso-dir .chev { position: absolute; inset: 0; margin: auto; width: 0; height: 0; border-style: solid; }
+.iso-dir { position: relative; }
+.iso-dir.n { grid-column: 2; grid-row: 1; }
+.iso-dir.w { grid-column: 1; grid-row: 2; }
+.iso-dir.e { grid-column: 3; grid-row: 2; }
+.iso-dir.s { grid-column: 2; grid-row: 3; }
+.iso-dir.n .chev { border-width: 0 8px 14px 8px; border-color: transparent transparent var(--color-cyan) transparent; }
+.iso-dir.e .chev { border-width: 8px 0 8px 14px; border-color: transparent transparent transparent var(--color-cyan); }
+.iso-dir.s .chev { border-width: 14px 8px 0 8px; border-color: var(--color-cyan) transparent transparent transparent; }
+.iso-dir.w .chev { border-width: 8px 14px 8px 0; border-color: transparent var(--color-cyan) transparent transparent; }
+
+.scope-plate {
+  pointer-events: auto; width: 132px; padding: 6px 6px 8px;
+  background: linear-gradient(180deg, #2a343c 0%, #12181e 100%);
+  border: 1px solid #5a4a2a;
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
+}
+.scope-plate canvas { display: block; width: 120px; height: 120px; image-rendering: pixelated; }
+.slate-frame {
+  width: min(92vw, 420px); height: min(72dvh, 420px);
+  border: 1px solid #c9a227;
+  clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px), 0 16px);
+}
+.slate-frame canvas { width: 100%; height: 100%; image-rendering: pixelated; }

@@ -1,0 +1,86 @@
+{
+  "id": "p001",
+  "slot": "head",
+  "image": "p001.png",
+  "cell": {
+    "w": 192,
+    "h": 192
+  },
+  "frames": [
+    {
+      "pose": "idle",
+      "dir": "s",
+      "x": 0,
+      "y": 0,
+      "w": 31,
+      "h": 32,
+      "origin": {
+        "x": 15,
+        "y": 29
+      },
+      "sole": null,
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "e",
+      "x": 31,
+      "y": 0,
+      "w": 31,
+      "h": 32,
+      "origin": {
+        "x": 15,
+        "y": 29
+      },
+      "sole": null,
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "n",
+      "x": 62,
+      "y": 0,
+      "w": 31,
+      "h": 32,
+      "origin": {
+        "x": 15,
+        "y": 29
+      },
+      "sole": null,
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "w",
+      "x": 93,
+      "y": 0,
+      "w": 31,
+      "h": 32,
+      "origin": {
+        "x": 15,
+        "y": 29
+      },
+      "sole": null,
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle2",
+      "dir": "s",
+      "x": 124,
+      "y": 0,
+      "w": 29,
+      "h": 32,
+      "origin": {
+        "x": 14,
+        "y": 29
+      },
+      "sole": null,
+      "flipX": false,
+      "frame": 1
+    }
+  ]
+}

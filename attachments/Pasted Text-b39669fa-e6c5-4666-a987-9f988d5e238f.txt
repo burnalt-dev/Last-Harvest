@@ -1,0 +1,55 @@
+LAST HARVEST — SMALL-UNIT ¼ SCALE FIT ONLY
+One-topic feed. Resize small units (Stripekin-class + in-game Gasket) so meshes fit/read inside a single ¼-square cell. Do not switch to sprites, retune HP, Aim sticky, floor sheet art, or Nest identity swap rules beyond scale.
+
+Names: Gasket = companion. Pilot = full-tile. Small foes = ¼-grid class.
+
+Locks: Hub hybrid = 2D iso floor + 3D toon actors. Pilot full-tile. Never-regress ¼ occupancy.
+
+============================================================
+GOAL
+============================================================
+When a small unit occupies one ¼ cell, its silhouette should **fit that cell’s footprint** (with slight readable overhang OK for spear tips) — not look pilot-scale or fill a whole diamond.
+
+============================================================
+MUST DO
+============================================================
+1) Scale **Stripekin** (and other small-unit forest chaff) so body+stance fits ~one ¼ cell on Veldt diamonds; pack of 3–4 on one full tile must look packed, not overlapping like giants.
+2) Scale **in-game Gasket** to companion-small / ≤½ full tile (existing Nest identity clamp) and consistent with Stripekin-adjacent size on drop + Nest.
+3) Keep **3D toon + dark outline** — no sprite blit of concept PNGs onto drop.
+4) Collision / occupancy stays ¼ stepper (QUARTER_GRID_MOVE); this paste is **visual scale** (+ hitbox if currently oversized).
+5) Pilot / full-tile foes / crates unchanged.
+6) Bay scale mannequins (1–2 Stripekin) use the same small scale.
+7) After scale: Aim highlight on one ¼ still frames the body; Sweep/Bump multi-hit footprints still make sense.
+
+
+============================================================
+FEEL BAR (Balancer)
+============================================================
+1) Stripekin footprint ≤~¼ tile silhouette; pack of 3 on one full tile = dense chaff/swarm, not three mini-pilots. Any unit that reads pilot-scale vs Gasket/pilot = FAIL.
+2) Nest/drop Gasket ≤½ tile hard clamp; clearly smaller than pilot; readable vs Stripekin pack.
+3) Aim highlight / sticky pick must still land on one ¼ body — if too small to see on dirt lanes, bump outline/contrast, do **not** scale back up to pilot.
+4) PASS when: 3 Stripekin share one tile and you read “crowd”; Gasket companion-small; pilot still the big read.
+
+============================================================
+MUST NOT
+============================================================
+- Convert foes to 2D sprites
+- Make Gasket or Stripekin pilot-sized
+- Paint units into floor tiles
+- Retune HP / Story / Aim damage split / floor sheet swap in this paste
+- Finger IK / remount hold profiles
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest: Stripekin ×3 on one full tile — read as dense crowd/chaff, each ≤~¼ silhouette.
+2) Gasket ≤½ tile beside them — companion-small, not pilot-scale.
+2b) Aim highlight still frames one ¼ body; if tiny, prefer outline/contrast over upsizing.
+3) Drop: same scales; pilot still full-tile.
+4) Aim highlight / ¼ lines still readable on new sizes.
+
+Done when: small units visually fit ¼ cells; pilot contrast clear; still 3D toon.
+
+Balancer feel 2026-09-05: pack=crowd; Gasket≤½; Aim still frames body; hold Nest feel until this+identity.
+
+Researcher stamp 2026-09-05: CLEAR to DM.

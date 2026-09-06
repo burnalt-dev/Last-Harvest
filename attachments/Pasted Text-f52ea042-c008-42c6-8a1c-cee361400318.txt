@@ -1,0 +1,42 @@
+LAST HARVEST — BARKBACK LOOK BULK FIX ONLY
+Researcher CLEAR 2026-09-06: v5 taller bunker matches Hub sponge + scale-ref. Soft-cap one prefab; Nest ≤2; Rootwarden stays boss; not Antlerkin tempo. Attach bunker-v5 with paste.
+One-topic feed. Prior bulk pastes still FAIL feel: squat/cute, shield/mace unclear. Target **taller bunker** (~2.5m, a head over Solace) + unmistakable hollow-trunk shield + scrap mace. Do not retune HP, Antlerkin tempo, Nest Aim/Shoot, or invent a second prefab.
+
+Names: Barkback = shield sponge. Rootwarden = boss. GasketDev = outside assistant.
+
+Concept refs (ATTACH PNG IN GROK BUILD):
+- concept-art/forest/barkback-bunker-v5.png (TARGET — taller bunker)
+- concept-art/forest/barkback-bunker-v4.png (too squat — do not match)
+- concept-art/forest/barkback-sheet-v2.png (cute — do not match)
+- REJECT: kaiju multi-story height
+
+============================================================
+GOAL
+============================================================
+Live Barkback reads as a **taller walking fortress** next to Solace: ~2.4–2.6m, much thicker, **obvious** hollowed-trunk shield + oversized scrap mace. Sponge AI stays. Not squat chibi. Not kaiju.
+
+============================================================
+MUST DO
+============================================================
+1) Height: slightly taller than Solace pilot (head taller OK); width >> Solace; full-tile bunker.
+2) Shield silhouette unmistakable at Nest camera; mace unmistakable.
+3) Upright fortress posture — not round squat mascot.
+4) 3D toon + dark outline; bloom cyan eye OK; no yellow hatch; no Solace wanzer.
+5) Soft-cap: same one prefab; Nest ≤2.
+6) Sponge soak ≠ Antlerkin wind-up.
+
+============================================================
+MUST NOT
+============================================================
+- Squat cute silhouette that fails Solace compare
+- Unclear arms; kaiju scale
+- HP invent / Lance-wide / Withdraw / Sonic mix-ins
+- Second unique mesh family
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest ×1 beside Solace: Barkback taller + thicker; shield+mace obvious.
+2) Sponge feel unchanged; ≤2 Nest.
+
+Done when: Balancer visual PASS on taller bunker + readable arms.

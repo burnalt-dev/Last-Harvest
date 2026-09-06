@@ -1,0 +1,23 @@
+LAST HARVEST — PER-WEAPON HOLD PROFILES ONLY
+Independent feed. Do this task only. Do not redo tool_seat socket law, do not add battle-stance art, do not add body/shoulder sit presets in this pass.
+
+Prerequisite (already shipped): universal grips with `tool_seat`; weapons parent at identity rest with handle-centered origins; Swing/Turn keep tools glued.
+
+Goal: fine-tune each weapon's resting hold with DATA profiles (seat / pitch / roll / yaw) so scythe, saw, cannon, and shield read correctly in the grip without breaking the shared mount contract.
+
+Must not break: tool_seat parenting; always-armed handR/handL; asymmetric combos (e.g. cannon + shield); gold hand sit (gripScale, gripWidth, fingerLen, holdAngle, weaponSeat) as global tweaks ON TOP of profiles; hybrid shells / bones overlay; Copy sit JSON; Swing/Turn glue; pilot full-tile / Gasket 1/4-square; gasket_mount.
+
+Task:
+1) Add a per-weapon hold profile table (or equivalent sit keys) applied AFTER identity parent to tool_seat. Fields per weapon id: seat (along mount axis), pitch, roll, yaw. Defaults start at 0; tune in bay.
+2) Author starting profiles for current tools:
+   - scythe (handR/handL): polearm along forearm/forward; blade clear of torso; handle centered in clamp
+   - saw (handR): slab/blade forward from palm; shaft in clamp; not dragging into legs
+   - cannon (handR): bore along forearm / forward combat axis; not cross-body; seated in palm
+   - shield (handL): face outward from forearm (block facing); rim clear of chest; grip at inner handle
+3) Hand role rules while profiling:
+   - handR = primary tool axis (attack / bore forward)
+   - handL = offhand (shield faces out; if scythe on L, mirror-sensible hold, not a flipped R paste that clips the body)
+4) Global gold hand sit remains: profiles are the per-tool baseline; gripScale/Width/fingerLen/holdAngle/weaponSeat still nudge the whole grip+tool assembly live.
+5) Verify in 3D Bay: each handR option, each handL option, plus cannon+shield; Swing/Turn stay glued; Bones overlay still shows tool_seat coincident with handle.
+
+Done when: each current weapon has a hold profile; bay seating looks correct per role without ad-hoc mesh re-parents; asymmetric combo works; socket law + glue preserved; profiles appear in Copy sit or an obvious dump for iteration.

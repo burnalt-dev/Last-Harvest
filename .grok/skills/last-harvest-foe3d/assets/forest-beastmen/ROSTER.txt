@@ -1,0 +1,16 @@
+Last Harvest — Forest beastmen concept pack
+Keepers only (Twitchkin + Wirefox scrapped).
+
+1. stripekin.png   — small spear humanoid (zebra×kobold)
+2. antlerkin.png   — big maul humanoid (stag brute)
+3. scrap-hound.png — quadruped beast (boar-wolf)
+4. rootwarden.png  — elite; combat pickaxe (NOT scythe)
+5. barkback.png    — armor sponge (badger×armadillo) → for_husk
+6. sapjaw.png      — ranged resin spit → for_spitter
+
+Extra (not a 7th keeper):
+- barkback-bunker-v5.png — 3D gold for the live smith mesh (hollow-trunk shield + scrap mace)
+- barkback-forest-still.jpg — painterly forest still, look ref only
+
+Swarm / ambusher slots still open if you want replacements later.
+Live drop: toon primitives in foe3d.ts. Do not blit these sheets.

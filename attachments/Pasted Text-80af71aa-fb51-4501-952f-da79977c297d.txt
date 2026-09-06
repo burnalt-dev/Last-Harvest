@@ -1,0 +1,51 @@
+LAST HARVEST — LANCER AIM vs SHOOT SPLIT (BUGFIX)
+One-topic feed. Fix single-Lancer (`lancer`) and dual (`lancers`) ranged chrome: Aim is lock-only; Shoot deals damage. Do not retune Nest identity, New Game stance select, melee Sweep/Withdraw verbs, Story numbers, or Bay gold sit.
+
+Names: Gasket = companion. Pilot = player. Stance `lancer` = cannon+shield; `lancers` = dual cannon. Both use Aim/Shoot family.
+
+============================================================
+GOAL
+============================================================
+Live FAIL: Shoot does nothing; Aim sometimes fires damage once. Restore locked split — Aim locks, Shoot confirms.
+
+============================================================
+MUST DO
+============================================================
+1) **Aim** (Bay-style facing/lock UI):
+   - Sets facing + sticky primary target (¼ highlight when multi-¼ on one full tile).
+   - **Never** deals damage, never spends shot energy, never resolves a hit.
+   - Aim ≠ resource/meter; hit still uses existing `acc`/Wits on Shoot.
+
+2) **Shoot**:
+   - **Only** path that spends energy and applies ranged damage for `lancer` / `lancers`.
+   - Uses sticky Aim target if valid; else closest valid foe (tie: greatest map +Y, then least |ΔX|, then least X among ¼ on same full tile).
+   - Sticky until target dead or LOS/Aim lock fails; then retarget closest.
+   - No valid targets → short notice + no-op (no false hit).
+
+3) Unlink any alias where Aim currently fires Attack/Shoot / one-shot damage.
+
+4) Keep two skillgram Program slots always visible (prior feed). Sawlance keeps Bump + Aim — do not strip Bump; do not give Shoot to `twohand`/`sawboard`.
+
+============================================================
+MUST NOT
+============================================================
+- Damage on Aim press
+- Dead Shoot plate that never spends energy / never hits
+- Auto-hit every ¼ on a full tile with one shot
+- Nest Gasket identity / New Game stance cards / melee Sweep paste in this feed
+- Gasket firing Lancer shots
+
+============================================================
+QA (one tab)
+============================================================
+1) Stance `lancer`: Aim alone → highlight/lock only; foe HP unchanged; no energy waste from Aim.
+2) Aim → Shoot → exactly one hit on sticky/closest pick.
+3) Shoot with no prior Aim → closest valid foe.
+4) Second Shoot without re-Aim → same sticky until dead/LOS.
+5) Shoot with no valid targets → notice, no-op.
+
+Done when: Aim never damages; Shoot always the confirm; sticky/closest rules still hold.
+
+Balancer FAIL 2026-09-05: Ivan — Shoot dead; Aim sometimes fires once. Split handlers required.
+
+Researcher stamp 2026-09-05: CLEAR — DM NOW. Paste ahead of laser VFX.

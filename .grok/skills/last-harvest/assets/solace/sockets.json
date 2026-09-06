@@ -1,0 +1,216 @@
+{
+  "unit": "labor-crate",
+  "cell": {
+    "w": 384,
+    "h": 384
+  },
+  "origin": "top-left",
+  "contract": "Every part is authored against these points. A piece that cannot hit the listed socket for its slot is not modular.",
+  "foot_line_y": 352,
+  "hover_plane_y": 328,
+  "sockets_by_dir": {
+    "s": {
+      "neck": {
+        "x": 192,
+        "y": 88,
+        "parent": "body",
+        "child": "head"
+      },
+      "shoulderL": {
+        "x": 128,
+        "y": 124,
+        "parent": "body",
+        "child": "armL"
+      },
+      "shoulderR": {
+        "x": 256,
+        "y": 124,
+        "parent": "body",
+        "child": "armR"
+      },
+      "hip": {
+        "x": 192,
+        "y": 216,
+        "parent": "body",
+        "child": "legs"
+      },
+      "handL": {
+        "x": 100,
+        "y": 236,
+        "parent": "armL",
+        "child": "hand"
+      },
+      "handR": {
+        "x": 284,
+        "y": 236,
+        "parent": "armR",
+        "child": "hand"
+      },
+      "companion_mount": {
+        "x": 192,
+        "y": 168,
+        "parent": "body",
+        "child": "gasket"
+      }
+    },
+    "e": {
+      "neck": {
+        "x": 200,
+        "y": 92,
+        "parent": "body",
+        "child": "head"
+      },
+      "shoulderL": {
+        "x": 156,
+        "y": 128,
+        "parent": "body",
+        "child": "armL"
+      },
+      "shoulderR": {
+        "x": 264,
+        "y": 120,
+        "parent": "body",
+        "child": "armR"
+      },
+      "hip": {
+        "x": 196,
+        "y": 220,
+        "parent": "body",
+        "child": "legs"
+      },
+      "handL": {
+        "x": 140,
+        "y": 240,
+        "parent": "armL",
+        "child": "hand"
+      },
+      "handR": {
+        "x": 296,
+        "y": 232,
+        "parent": "armR",
+        "child": "hand"
+      },
+      "companion_mount": {
+        "x": 168,
+        "y": 168,
+        "parent": "body",
+        "child": "gasket"
+      }
+    },
+    "n": {
+      "neck": {
+        "x": 192,
+        "y": 88,
+        "parent": "body",
+        "child": "head"
+      },
+      "shoulderL": {
+        "x": 256,
+        "y": 124,
+        "parent": "body",
+        "child": "armL"
+      },
+      "shoulderR": {
+        "x": 128,
+        "y": 124,
+        "parent": "body",
+        "child": "armR"
+      },
+      "hip": {
+        "x": 192,
+        "y": 216,
+        "parent": "body",
+        "child": "legs"
+      },
+      "handL": {
+        "x": 284,
+        "y": 236,
+        "parent": "armL",
+        "child": "hand"
+      },
+      "handR": {
+        "x": 100,
+        "y": 236,
+        "parent": "armR",
+        "child": "hand"
+      },
+      "companion_mount": {
+        "x": 192,
+        "y": 200,
+        "parent": "body",
+        "child": "gasket"
+      }
+    },
+    "w": {
+      "neck": {
+        "x": 184,
+        "y": 92,
+        "parent": "body",
+        "child": "head"
+      },
+      "shoulderL": {
+        "x": 120,
+        "y": 120,
+        "parent": "body",
+        "child": "armL"
+      },
+      "shoulderR": {
+        "x": 228,
+        "y": 128,
+        "parent": "body",
+        "child": "armR"
+      },
+      "hip": {
+        "x": 188,
+        "y": 220,
+        "parent": "body",
+        "child": "legs"
+      },
+      "handL": {
+        "x": 88,
+        "y": 232,
+        "parent": "armL",
+        "child": "hand"
+      },
+      "handR": {
+        "x": 244,
+        "y": 240,
+        "parent": "armR",
+        "child": "hand"
+      },
+      "companion_mount": {
+        "x": 216,
+        "y": 168,
+        "parent": "body",
+        "child": "gasket"
+      }
+    }
+  },
+  "two_hand": {
+    "occupies": [
+      "handL",
+      "handR"
+    ],
+    "weapon_points": [
+      "gripL",
+      "gripR"
+    ],
+    "arms": "keep armL and armR meshes; both wrists snap to the hand part"
+  },
+  "notes": [
+    "South map is the calibration source. Recalibrate against canon PNGs if pixels disagree, then update this file \u2014 do not invent per-part sockets.",
+    "Two layers only: shoulder attaches the arm, hand attaches a held weapon. No elbow or finger sockets.",
+    "Integrated arm weapons use shoulder only and leave that side's hand unused.",
+    "Two-hand kits occupy BOTH handL and handR. Weapon frame stores gripL and gripR. Do not omit armL.",
+    "West may flip east across x=192 only when the kit is symmetric. Blade kit is not.",
+    "back and aux have no sockets.",
+    "Piston and reverse-joint soles sit on foot_line_y. Hover hem sits on hover_plane_y.",
+    "HD pack: 384 cell, LANCZOS, no BOX/2 nearest. Matches last-harvest-terrain.",
+    "companion_mount is Gasket\u2019s seat on the body rear, not a swappable part."
+  ],
+  "companion_mount": {
+    "slot": "not a part id",
+    "who": "Gasket",
+    "note": "Rear hull. Emulator/packer must expose this. Gasket \u00bc-tile sits here when mounted. Charge always mounts first."
+  }
+}

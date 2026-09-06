@@ -1,0 +1,20 @@
+{
+  "scheme": "p###",
+  "id_is": "one part forever, all frames share it",
+  "never_reuse": true,
+  "on_p999_exhausted": "stop and ask Ivan",
+  "next_free": "p011",
+  "parts": [
+    { "id": "p000", "slot": "body", "variant": "labor-crate" },
+    { "id": "p001", "slot": "head", "variant": "visor-slit" },
+    { "id": "p002", "slot": "legs", "variant": "piston" },
+    { "id": "p003", "slot": "legs", "variant": "hover-skirt", "tier": "blue", "min_tier": "blue" },
+    { "id": "p004", "slot": "legs", "variant": "reverse-joint" },
+    { "id": "p005", "slot": "armR", "variant": "manipulator" },
+    { "id": "p006", "slot": "armL", "variant": "manipulator" },
+    { "id": "p007", "slot": "handL", "variant": "door-slab-shield" },
+    { "id": "p008", "slot": "handR", "variant": "chainsaw-blade" },
+    { "id": "p009", "slot": "hands", "variant": "scythe", "occupies": ["handL", "handR"] },
+    { "id": "p010", "slot": "hands", "variant": "cannon", "occupies": ["handL", "handR"] }
+  ]
+}

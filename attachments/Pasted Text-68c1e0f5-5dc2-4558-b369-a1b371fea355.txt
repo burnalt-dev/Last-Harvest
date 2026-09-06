@@ -1,0 +1,61 @@
+LAST HARVEST — DROP / COMBAT UI CLEANUP ONLY
+One-topic feed. Clean the main drop (sortie) combat HUD for clarity over density. Do not change Nest identity, Nest sandbox controls, turn AI kernel, Bay gold sit / hold profiles, Story picker copy, Survival rates, or enemy HP sheets.
+
+Names: Gasket = in-game companion. Pilot / Solace = player. GasketDev = outside assistant. Balancer owns combat feel after layout lands.
+
+GOAL
+Drop combat UI readable at a glance: thin persistent meters, clear action verbs, board-first info, Gasket as small command chrome — not a second pilot panel. Ship/Bay catalog chrome must not appear on drop.
+
+Refs (clarity > density): Into the Breach telegraphs/tooltips; Battletech thin over-unit meters; FTL discrete panels; Darkest dungeon/town UI split. Research: `research/2026-09-05-main-ui-hud-comps.md`.
+
+============================================================
+MUST DO
+============================================================
+1) SCENE SPLIT
+   - Drop HUD ≠ Ship/Bay ≠ Nest. On drop: hide Bay Bones, gold sit, parts warehouse, Nest Spawn/Reset toolbars.
+   - Inventory / Programs open as **one modal or slide-over**; closing restores full board.
+
+2) PERSISTENT COMBAT CHROME (thin)
+   - Always visible: Pilot HP; energy/Power (or recovery); carry / withdraw hint.
+   - Large fixed **End Turn** (or Wait) control.
+   - 3–5 big action verbs only (e.g. Move / Attack / Program / Harvest / Withdraw) — not a forest of tiny icons.
+
+3) GASKET CHROME
+   - Small companion pip (HP/status only).
+   - Command chips: **Follow | Hold | Focus** (if AI kernel present) — never a second Move stick, never a full second sheet.
+   - Quip line may stay one short banner; must not cover the board or action verbs.
+
+4) SELECTION / TOOLTIPS
+   - Selected foe: name, readable tags, soft-counter one-liner (≤ ~14 words), HP bar. No DPS spreadsheet.
+   - Selected tool/Program: short plain description; prefer diagram/animation if already easy — no multi-paragraph walls.
+   - Prefer board telegraphs for enemy intent / skill tiles when those exist (Breach-style clarity).
+
+5) LAYOUT HYGIENE
+   - No overlapping translucent stacks that hide the grid.
+   - One game tab. Safe margins so meters don’t sit on foe feet.
+   - Difficulty / Wits / Survival jargon stays off combat chrome (Story line only on difficulty picker elsewhere).
+
+============================================================
+MUST NOT
+============================================================
+- Permanent stur/avo/Wits number dump on combat HUD
+- Bay catalog / Bones overlay / gold sit on drop
+- Nest Spawn/Fight toolbar on drop
+- Gasket as second protagonist panel or player-walked unit
+- Hard mode UI; Perception / `per` resurrect
+- Flatten enemies / invent HP / mix Story retune / AI rewrite / Nest identity / ¼-overlay into this paste
+- Finger IK / modular remount “as UI”
+
+============================================================
+QA (one tab)
+============================================================
+1) Drop: see only combat chrome — no Bay warehouse, no Nest sandbox bar.
+2) End Turn + action verbs obvious; HP/energy/carry readable without covering the grid.
+3) Open Programs/inventory → modal; close → board fully visible again.
+4) Select Stripekin (or any foe): name + tags + soft counter; no goblin label if renamed.
+5) Gasket chips (if present) don’t add a second Move stick; companion pip stays small.
+6) Ship/Bay still has catalog when you leave drop (don’t delete Bay UI — just don’t show it on drop).
+
+Done when: drop HUD is scannable in one glance; wrong-scene chrome gone; Gasket chrome is chips-not-panel; inventory doesn’t eat the fight.
+
+Researcher pass 2026-09-05: shippable. Drop-only; screenshots can fold later without changing must-add/must-not.

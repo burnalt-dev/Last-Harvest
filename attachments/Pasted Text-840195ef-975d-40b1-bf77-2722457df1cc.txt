@@ -1,0 +1,51 @@
+LAST HARVEST — STRIPEKIN FACING + IDLE ONLY
+One-topic feed. Make Stripekin face movement/attack directions and play a simple idle. Do not reskin armor, retune HP/DPS, Aim/Shoot, floor tiles, Nest identity, or New Game.
+
+Names: Stripekin = first forest chaff. Gasket = companion. GasketDev = outside assistant.
+
+============================================================
+GOAL
+============================================================
+Stripekin packs feel alive: units **face** the direction they move / attack, and while standing they play a light **idle** (breath / weight-shift / spear nudge) instead of frozen statues.
+
+============================================================
+MUST DO
+============================================================
+1) FACING
+   - On move step (¼-grid): rotate yaw to face the move direction before/as the step completes.
+   - On melee / spear attack: face the primary target (or attack tile) when the swing starts.
+   - While aggro’d and standing (not moving / not in attack windup): prefer face **nearest threat**; else keep current facing into idle.
+   - Snap or short ease (≤~150ms) — readable, not floaty. Prefer 8/4-way facing if full continuous looks wrong on iso.
+   - Pack members face independently (don’t share one heading).
+
+2) IDLE
+   - When not moving / not in attack windup: loop a cheap idle — subtle breath or weight-shift + optional spear tip wobble / ear flick if bones exist.
+   - Idle must not slide the feet off the ¼ cell or change occupancy.
+   - Combat pause / hitstun may interrupt idle; resume after.
+
+3) SCOPE
+   - Applies to Stripekin (and alias `for_skitter` if still live id) on Nest + forest drop.
+   - Reuse existing turn/step joint names if present (MAKER: anims use joint names). No new finger IK.
+
+4) PERF
+   - Lightweight: shared clip or procedural lean — no heavy blend trees / realtime shadows / per-unit cloth sim.
+
+============================================================
+MUST NOT
+============================================================
+- Armor look / greaves / HP invent in this paste
+- Root motion that breaks ¼ occupancy
+- Pilot / Gasket idle rewrites unless sharing a generic small-unit turn helper (OK to share facing helper if already used by Gasket)
+- Solace parts, sprites, PNG blit
+- Mixing Aim/laser, floor tiles, New Game
+
+============================================================
+QA (one tab)
+============================================================
+1) Nest Spawn pack: walk a Stripekin — mesh faces the step direction.
+2) Attack: spear swings toward target facing, not sideways freeze.
+3) Aggro standstill: faces nearest threat (or holds facing into idle).
+4) Stand still 3s: idle loop visible (breath/shift); feet stay on ¼.
+5) Pack of 3: each can face different dirs; no statue cloud.
+
+Done when: Stripekin faces move/attack/aggro dirs + has a light idle; ¼ grid + chaff role unchanged.

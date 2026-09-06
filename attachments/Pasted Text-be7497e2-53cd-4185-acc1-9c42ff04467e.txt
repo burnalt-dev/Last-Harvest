@@ -1,0 +1,59 @@
+LAST HARVEST — VELDT-9 / CANOPY FLOOR TILES ONLY
+One-topic feed. Replace ugly muddy forest floor with readable 2D iso dirt+moss diamonds. Do not retune Nest identity, Aim/Shoot, melee Sweep, enemy HP, New Game, or fog systems beyond “fog is not baked into floor albedo.”
+
+Names: Gasket = companion. Pilot = player. Tutorial forest = Veldt-9. Terrain = 2D iso; foes = 3D.
+
+Research: research/2026-09-05-forest-floor-tiles.md
+Concept art (approved refs — match live sheet to these):
+- concept-art/veldt-floor/01-tile-sheet-strip.png
+- concept-art/veldt-floor/02-stripekin-readability.png
+- concept-art/veldt-floor/03-hazard-rims.png
+- concept-art/veldt-floor/04-industrial-scar.png
+- concept-art/veldt-floor/05-lane-canopy.png
+
+============================================================
+GOAL
+============================================================
+Ship one Veldt biome floor sheet: crushed dirt harvest lanes + sparse cool moss accents. Cells stay readable for ¼-grid, Stripekin packs, Aim highlight, and Sweep arcs. Not muddy green noise.
+
+============================================================
+MUST DO
+============================================================
+1) Replace Veldt walkable floor textures with Hub **moss + dirt diamond** language:
+   - Path / packed dirt (lighter walkable lane)
+   - Quiet undergrowth dirt (cooler, moss only as corner accents ≤~20% texel)
+   - Root-seam variant (dark umber along diamond edges for grid cue)
+2) Keep terrain **2D iso 2:1 diamonds**, SNES HD, **dark 1px outline**. One tile sheet per biome; slice 1 = this one floor.
+3) Actors stay **3D** — do not paint Solace, Stripekin, or wanzer parts into the floor.
+4) Hazard tiles distinct: **thorn pit** / **root hole** = darker well + rim highlight (not green smear).
+5) Canopy fog stays a **fog layer** (Radar opens it) — do **not** bake fog/noise into floor albedo.
+6) Shinies remain spark (`sh001`) — not a busy floor clutter texture.
+7) Values quiet enough that Stripekin cream/stripes + ¼ split lines + Aim highlight still read.
+8) Optional scar variant: cracked grey pad / crate imprint under dirt (harvest yard), not a full factory biome.
+9) When concept art lands: match live sheet to approved refs (paths above once filled).
+
+============================================================
+MUST NOT
+============================================================
+- Muddy / saturated green noise carpets or photo-grass
+- 3D mesh Veldt floor (Hub Never)
+- Yellow caution hatch / cyan visor-bar language on tiles
+- Competing micro-grid that fights ¼ overlays
+- Verdant Claim toxic-green + flower-magenta as the floor base
+- Mixing Nest identity, Aim sticky, laser VFX, melee caps, or enemy retunes into this paste
+
+============================================================
+QA (one tab)
+============================================================
+1) Drop / Nest on Veldt: floor reads as dirt lanes + sparse moss, not green mud.
+2) Stripekin ×3 on one full tile: stripes still readable on new ground.
+3) ¼ overlay + Aim highlight + Sweep arc still clear.
+4) Thorn pit / root hole obviously different from walkable diamonds.
+5) Fog still a separate layer (Radar open), not baked into dirt.
+6) No 3D floor mesh; no foes painted into tiles.
+
+Done when: Veldt floor sheet matches dirt+sparse-moss direction, Hub 2D iso locks, and Stripekin/¼ readability pass.
+
+Concept paths folded 2026-09-05 — Researcher CLEAR — DM.
+
+Researcher stamp 2026-09-05: CLEAR. 02 Stripekin shot = readability ref only — live sheet 2D diamonds, do not paint foes into tiles.

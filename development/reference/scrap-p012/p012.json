@@ -1,0 +1,79 @@
+{
+  "id": "p012",
+  "slot": "head",
+  "image": "p012.png",
+  "frames": [
+    {
+      "pose": "idle",
+      "dir": "s",
+      "x": 0,
+      "y": 0,
+      "w": 384,
+      "h": 384,
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "e",
+      "x": 384,
+      "y": 0,
+      "w": 384,
+      "h": 384,
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "n",
+      "x": 768,
+      "y": 0,
+      "w": 384,
+      "h": 384,
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "idle",
+      "dir": "w",
+      "x": 1152,
+      "y": 0,
+      "w": 384,
+      "h": 384,
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "flipX": false,
+      "frame": 0
+    },
+    {
+      "pose": "hangar",
+      "dir": "s",
+      "x": 1536,
+      "y": 0,
+      "w": 384,
+      "h": 384,
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "flipX": false,
+      "frame": 0
+    }
+  ],
+  "from_isolate": "hangar",
+  "no_mirror": true
+}

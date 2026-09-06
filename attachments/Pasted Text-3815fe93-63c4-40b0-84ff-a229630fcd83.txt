@@ -1,0 +1,31 @@
+Paste this into Grok Build (3D Bay / Solace mesh context):
+
+---
+
+**3D Bay: replace the default mech with a modular skeleton base**
+
+Stop using the fully dressed Solace (labor chest, stripes, boots, scythe, etc.) as the underlying body. The default in **3D Bay** must be a **bare armature** — thin bone cylinders + small brass joint spheres only. Modular parts will add onto this by parenting to sockets and optionally scaling those bones (reshape/decorate). Do not skin-swap on top of the old complete hero mesh.
+
+**Build this joint hierarchy (exact socket names):**
+- Spine: `root` → `hips` → `spine_low` → `spine_mid` → `chest` → `neck` → `head`
+- Arms L/R: `clavicle_*` → `shoulder_*` → `upper_arm_*` → `elbow_*` → `forearm_*` → `wrist_*` → `weapon_mount_*` (default weapon on `_R`)
+- Legs L/R: `hip_*` → `thigh_*` → `knee_*` → `shin_*` → `ankle_*` → `foot_*`
+- Utility: `pack_mount` (back of chest), `core_mount` (chest center), `gasket_mount` (left shoulder perch), `skirt_ring` (around hips)
+
+**Look:** dark steel bones, brass joints, hanger-mannequin vibe. No armor, visor, pack, weapon, or gasket on the naked base.
+
+**Retarget existing systems:**
+- Parts dock (`head/body/legs/arms/weapon`) attaches meshes to those sockets (not the old labor body).
+- Solace-gold sit sliders drive skeleton dims: hip/shoulder/neck heights, chest cage scale, arm length/thickness, overall scale — still a thin cage, not armor.
+- Step / turn / swing animate these joint names.
+- Gasket follow/mount uses `gasket_mount`.
+
+**Optional:** a “Bones only / Bones + parts” toggle in the bay.
+
+**Out of scope:** finger/toe bones; removing the parts dock; combat/stat UI.
+
+**Done when:** opening 3D Bay shows skeleton-only; cycling parts decorates sockets without bringing back the old full dress as the base; Reset gold returns a clean stance; Copy sit still exports joint JSON.
+
+---
+
+Shorter version if the chat is already mid-bay work: *“Strip Solace to a bare jointed skeleton with the socket list above; parts parent to sockets; keep sit sliders and anims on those bones.”*

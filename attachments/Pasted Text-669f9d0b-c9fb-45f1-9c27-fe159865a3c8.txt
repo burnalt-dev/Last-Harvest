@@ -1,0 +1,63 @@
+LAST HARVEST — STRIPEKIN (FIRST ENEMY) ONLY
+One-topic feed. Build the first tutorial-forest enemy from concept art. Do not implement Antlerkin, Scrap-Hound, Barkback, Sapjaw, Rootwarden, Story numbers, modular bay, hold profiles, or load-scopes here.
+
+Names: Stripekin = zebra×kobold beastman (player-facing). Legacy id may stay `for_skitter` until aliased. Gasket = in-game companion. GasketDev = outside assistant.
+
+Concept (attach if available):
+- `concept-art/forest/stripekin.png`
+- Pack copy: `concept-art/forest-beastmen-pack/stripekin.png`
+Look target: bipedal zebra-striped humanoid; scrap spear (stone/metal tip lashed to wood shaft); scavenged pauldrons/straps/loincloth; three-toed claw feet; short mohawk mane; long striped tail. Salvage folk — NOT fantasy goblin, NOT Solace wanzer parts.
+
+============================================================
+GOAL
+============================================================
+Ship a playable Stripekin on the tutorial forest drop that matches Hub/beastmen locks, teaches cleave/facing as chaff, and respects load scopes (enemies only on landing — never on ship/Bay).
+
+============================================================
+MUST DO
+============================================================
+1) PRESENTATION
+   - Player-facing name: **Stripekin**. No goblin/orc labels in UI, bestiary, banners, or spawn strings for this unit.
+   - 3D toon foe (primitives / ramp / dark outline). Terrain stays 2D iso. Concepts are painterly — live mesh is simplified toon, not a PNG blit of the sheet.
+   - Read as hide + scrap spear. Cyan only as Bloom-ore spark (e.g. eye glint) — never Solace visor bar. **Never yellow caution hatch** on a foe.
+   - No modular `p###` foe limbs. No wanzer gunmetal plates. No anvil parented to the unit.
+
+2) GRID / SCALE
+   - Occupancy: **¼-square** (small-unit class). Same shared small-unit stepper as Gasket.
+   - Pilot stays full-tile. Do not snap Stripekin to full tiles.
+
+3) COMBAT ROLE (feel — Balancer owns final HP/DPS)
+   - Role: small humanoid **chaff / swarm-ish**. Scrap spear melee.
+   - Teach: don’t 1v1 the cloud; cleave / facing. Prefer packs of several Stripekin over one tanky duelist.
+   - Tags (readable): `humanoid`, swarm-ish / scrap-spear. Soft counter: Cleaving Sweep / wide melee.
+   - Keep existing `for_skitter` AI/HP band if already wired — **rename/reskin first**; do not invent new DPS sheets in this paste. If numbers must change, stop and ask Ivan/Balancer.
+
+4) LOAD SCOPE
+   - Stripekin meshes/packs load only on **landing / dungeon / planet drop**.
+   - Ship / 3D Bay: MUST NOT load Stripekin (or any dungeon enemies/tiles).
+
+5) QUIPS (optional if wire is easy)
+   - Alias or map quips: insight “Many spears, one shared brain cell.” / comedy “Cute until you’re the picnic.” / strat “Cleave — don’t duel the cloud.”
+   - Prefer aliasing `for_skitter` → Stripekin over duplicating CSV unless required.
+
+============================================================
+MUST NOT
+============================================================
+- Implement the rest of the forest roster in this paste
+- Finger IK / unique skinned hands / per-enemy skeleton sockets
+- Realtime shadows / heavy post on the unit
+- Mid-sortie catalog / ship combat pack
+- Rootwarden pickaxe or player scythe on Stripekin
+- Goblin/orc silhouette language or Solace part reuse
+- Hard / Story mix; Perception / `per` keys
+- Leaving Bones overlay or bay catalog on the drop
+
+============================================================
+QA (one tab)
+============================================================
+1) Ship/Bay: no Stripekin / no dungeon enemies in scene.
+2) Drop: Stripekin visible as zebra-scrap spear chaff; name Stripekin; ¼-grid step.
+3) Fight a small pack: cleave/facing lesson readable; no goblin labels.
+4) Return to ship: combat pack disposed; catalog back; no foes resident.
+
+Done when: first enemy is Stripekin from concept (toon), ¼-grid chaff with scrap spear, player-facing rename clean, load scopes respected, AI/HP band stable unless Balancer supplies a numbers tweak.

@@ -1,0 +1,74 @@
+LAST HARVEST — SKILLGRAM SLOTS + LANCER AIM/SHOOT ONLY
+One-topic feed. Drop UI: always show the two loaded skillgram buttons. Lancers stance: Shoot + Aim (from 3D Bay aim). Multi small-units on one full tile: Lancer hits ONE. Do not retune Nest identity, New Game stance select, Bay gold sit, Story numbers, or full Drop HUD redesign (UI_CLEANUP_DROP) except these controls.
+
+Names: Gasket = companion. Pilot = player. GasketDev = outside assistant. Stance id `lancers` = dual cannon; `lancer` = cannon+shield (Aim/Shoot family).
+
+============================================================
+GOAL
+============================================================
+1) Combat chrome always reserves **two** skillgram slots for the two loaded Programs — visible even if empty (grey) or always filled when two are equipped.
+2) Lancer / Lancers ranged flow uses **Aim** (Bay-style) then **Shoot**; shot resolves to a **single** small-unit target when several share a full tile.
+
+============================================================
+MUST DO — SKILLGRAM UI
+============================================================
+1) Two skillgrams can be loaded at once → **two skillgram buttons always shown** on drop combat chrome (not collapsing to one / not hidden when unused).
+2) Empty slot = clear empty/grey state; loaded = icon + short name. Tap fires that Program (existing energy rules).
+3) Do not add a third persistent skillgram button in this paste.
+
+============================================================
+MUST DO — AIM / SHOOT (Lancer family)
+============================================================
+1) For stances that Aim/Shoot (`lancer`, `lancers`; sawlance Aim only if already wired — never Shoot on `twohand`/`sawboard`): expose **Aim** using the same Bay facing/lock UI. **Aim ≠ separate resource** — no Aim-meter; hit still uses existing `acc`/Wits pool.
+2) **Shoot** confirms the aimed shot (Lancers: dual / pellet rules already drafted — still one *target pick* for who receives the shot volume unless Balancer already defined spread differently; default = one primary target).
+3) Shoot is the ranged confirm — not a generic Attack plate rename for melee stances.
+
+============================================================
+MUST DO — MULTI ¼ ON ONE FULL TILE (Lancer hit pick)
+============================================================
+When multiple small-units (¼-grid) occupy the **same full tile** and a Lancer-family shot would hit that tile:
+1) Hit **exactly one** foe (not the whole cloud on that tile).
+2) Prefer the **closest** to the pilot (distance from pilot to that ¼-cell).
+3) On distance **tie** (lock for Nest + drop QA): among tied ¼-cells on that full tile, pick **greatest +Y in map space** (south / “lower” on the board). If still tied: **least |ΔX| to pilot**, then **least X**. Do not use screen-bottom alone (too soft for iso).
+4) Same rule for Nest feel-pass and drop. Cleaving melee (scythe / twohand) is unchanged by this paste.
+5) Nest/drop: while Aim is active, **highlight the chosen ¼-cell** so the pick never feels random.
+6) Sawlance keeps **Bump + Aim** — do not strip Bump in this paste.
+7) Lancers multi-pellet volume rules stay as designed; this paste only defines the **single primary Aim target pick** among ¼ units on one full tile (don’t redefine pellet count here).
+
+
+============================================================
+MUST DO — LANCERS / LANCER SHOOT STICKY TARGET
+============================================================
+1) After Aim locks a primary ¼ (or full-tile) target, **Shoot keeps that sticky target** across shots until:
+   - target is **dead**, or
+   - **LOS / Aim lock fails** (blocked, out of range, invalid).
+2) If sticky target is gone/invalid: retarget **closest** valid foe (same closest + map +Y / |ΔX| / X tiebreak when multi-¼ on one tile).
+3) If **no valid targets**: show a short notice and **no-op** (no energy waste if that’s already the pattern — at minimum no damage / no false hit).
+4) Applies to `lancer` + `lancers` Shoot (and sawlance Shoot only if wired). Does not change melee cleave caps.
+5) Shoot with **no prior Aim lock** this engagement = pick **closest** valid foe (same +Y / |ΔX| / X tiebreak) — same as Ivan “or if you aimed…” fallback.
+
+============================================================
+MUST NOT
+============================================================
+- Auto-hit every ¼ unit on a full tile with one Lancer shot
+- Hide skillgram buttons when two are loadable
+- Bay Bones / warehouse / Nest sandbox on drop
+- Invent new HP sheets / Story retune / Hard / `per`
+- Mix Nest Gasket identity, New Game stance cards, or ¼-overlay lines into this paste
+- Make Gasket fire Lancer shots
+
+============================================================
+QA (one tab)
+============================================================
+1) Drop with two Programs loaded → two skillgram buttons always visible.
+2) Stance `lancer` or `lancers` → Aim (Bay-like) then Shoot.
+3) Nest or drop: three Stripekin on one full tile → Shoot hits one; closest wins; tie → greatest map +Y, then least |ΔX|, then least X; Aim highlight shows the pick.
+4) Melee Harvest scythe cleave still can hit multiple if it already could — this paste doesn’t nerf cleave.
+
+Done when: two skillgram slots always shown; Lancer Aim/Shoot live; multi-¼ → single pick; Shoot sticky until dead/LOS else closest; empty = notice no-op.
+
+Balancer feel 2026-09-05: OK for v1 — one Aim hit; closest; tie lower-toward-pilot; highlight target cell; Sawlance keeps Bump; Lancers pellets separate.
+
+Researcher stamp 2026-09-05: CLEAR. Tiebreak = +Y / |ΔX| / X; Aim = facing UI not a resource; pellets still one primary target.
+
+Sticky-target patch 2026-09-05: Researcher CLEAR — sticky/dead/LOS/closest; no-Aim Shoot=closest; empty notice no-op.

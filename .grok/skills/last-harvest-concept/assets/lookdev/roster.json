@@ -1,0 +1,12 @@
+{
+  "pass": "GOLD: 1 Labor (farmer-cut build). Style lock for the starter crate.",
+  "sheets": [
+    { "file": "style-1-labor.jpg", "label": "GOLD 1 Labor — modular sit + starting look" },
+    { "file": "style-2-farm.jpg", "label": "2 Farm (not gold)" },
+    { "file": "style-3-slab.jpg", "label": "3 Slab (not gold)" },
+    { "file": "style-4-toy.jpg", "label": "4 Toy (not gold)" }
+  ],
+  "picks": [
+    { "n": 1, "name": "Labor GOLD" }
+  ]
+}

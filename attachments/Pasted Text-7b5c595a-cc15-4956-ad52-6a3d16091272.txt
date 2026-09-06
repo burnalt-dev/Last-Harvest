@@ -1,0 +1,50 @@
+LAST HARVEST — AIM-TILE SHOOT ONE BODY FIX (SHARED PACK HP)
+Researcher CLEAR 2026-09-06: paste ASAP. Soft-cap OK. Root cause = shared pack HP / multi-body Pin — not Aim diamond chrome.
+One-topic feed. Prior AIM_TILE_SHOOT_ONE: Aim diamond PASS; Shoot still wiped Nest pack×3 (pack HP 36→0, all dead). No “Lance wide” string but total clear. Kill shared pack HP / multi-body Pin resolve. Do not retune Barkback, Withdraw, Sonic Tile wipe, or invent denser packs.
+
+Names: Pilot Lancer Aim/Shoot = Pin forever. Gasket does not shoot. Melee cleave unchanged. Sonic owns whole-tile wipe later.
+
+Balancer Nest FAIL evidence (one tab): Aim full diamond OK; Shoot once → pack HP 36→0 / 0 alive; secondary mark still weak. Suspect shared pack HP pool or multi-body damage apply.
+
+Canon: research/2026-09-06-projectile-rules.md — Pin = exactly one body. Ivan lock: Aim = full tile; Shoot = one sticky/closest occupant.
+
+============================================================
+GOAL
+============================================================
+Pack×3 = **three entities**, each with **own HP**. One Pin Shoot damages **one** entity id only. After one Shoot expect ~2 alive and pack HP sum down by **one body** (e.g. 36→~24 if ~12 each) — never 36→0 from one Pin.
+
+============================================================
+MUST DO
+============================================================
+1) Nest/drop Stripekin packs: each body is a distinct combat entity with its **own HP**. Ban a single shared pack HP pool that all bodies read from / die with.
+2) Shoot (Pin) applies HP delta to **exactly one** entity id — sticky on Aimed tile if valid, else closest occupant on that tile (+Y / |ΔX| / X among tile occupants).
+3) **Hard ban:** applying the same Shoot to every occupant; subtracting from a pack aggregate that zeros all bodies; killing siblings when one body hits 0.
+4) Smoke log: list damage entity ids for the Shoot — count must be **1** or FAIL. Log remaining alive count after resolve.
+5) Combat UI: if a pack HP total is shown, it must be the **sum of living bodies’ HP**, not one pooled bar that one hit can empty for the whole pack.
+6) Secondary mark: while Aim locked on a packed tile, mark the sticky/closest body that will take the next Shoot (readable which of the 3 dies).
+7) Aim full-tile diamond chrome stays (Ivan mobile lock). projectileClass `pin`.
+8) Soft-cap: shared Stripekin prefab/mat; no denser packs; no unique mats per member to “test.”
+9) Same rules Nest + drop. Melee ≤4 / ≤12 untouched.
+10) If Nest shows one pack bar, label/treat it as **sum of living bodies’ HP** — never one pooled pool a single Pin can empty.
+11) Smoke: print each body’s HP before and after Shoot — **only one body** may change.
+
+============================================================
+MUST NOT
+============================================================
+- Shared pack HP pool that one Pin empties for all bodies
+- Multi entity-id HP delta on one Shoot
+- Turning Pin into Tile wipe (Sonic later)
+- Abandoning ¼ packs / collapsing to one body per tile
+- HP band invent beyond splitting existing pack total into per-body pools
+- Barkback / Withdraw / Sonic mix-ins
+
+============================================================
+QA (one tab — Nest Lancer, pack×3)
+============================================================
+1) Aim packed tile (diamond lit) + secondary mark on one body → Shoot: **1 dead / 2 alive**.
+2) Pack HP total drops by ~one body only (e.g. 36→~24), **not** 36→0.
+3) Smoke: damage entity id count == 1; remaining alive == 2; per-body HP before/after shows only one body changed.
+4) Second Shoot: again one body only.
+5) No “Lance wide”; no total clear from one Pin.
+
+Done when: Balancer Nest PASS — one Pin = one Stripekin; pack survives.

@@ -1,0 +1,54 @@
+LAST HARVEST — QUARTER OCCUPANCY / MOVE / COLLISION V1 ONLY
+One-topic feed. Ivan pivot 2026-09-06: rebuild ¼ system from the ground up. Occupancy + move + collision only. Do NOT invent Aim/Shoot/Pin chrome, Sonic, Barkback look, or Withdraw in this paste. Park AIM_TILE_SHOOT_* / LANCER_SHOOT_SINGLE_* until this law sticks.
+
+Names: Stripekin-class = small ¼ units. Pilot / Barkback-class = full-diamond. Gasket = companion-small. GasketDev = outside assistant.
+
+Canon: research/2026-09-06-quarter-occupancy-law.md · research/2026-09-06-combat-system-checklist.md §3
+
+============================================================
+GOAL
+============================================================
+Nest + drop share one occupancy model: full diamond = 4×¼; each small body owns one ¼ + own entity id + own HP; move/collide/path on ¼ cells; pilot stays full-tile. Pack×3 = three countable silhouettes — never one pooled HP blob.
+
+============================================================
+MUST DO — OCCUPANCY
+============================================================
+1) Full diamond = 4 quarter-cells (2×2). Soft split overlay optional later (QUARTER_GRID_OVERLAY) — not required here if already LIVE.
+2) Small units occupy exactly one ¼ each. Distinct combat entity id + distinct HP pool per body.
+3) Nest Spawn pack×3 = three entities with three HP values (e.g. ~12 each if old pack total was 36). Ban shared pack HP pool.
+4) Pilot / Barkback / full-tile foes occupy whole diamond (1 body, 1 HP).
+5) Gasket: companion-small ≤½ tile; Nest identity clamp; shared small stepper with Stripekin-class (existing QUARTER_GRID_MOVE).
+6) Soft-cap: shared Stripekin prefab/mat; Nest packs 3–6; ≤~16 animated.
+
+============================================================
+MUST DO — MOVE / COLLISION
+============================================================
+1) Small-unit step = one ¼ cell (not full diamond).
+2) Collision: two smalls cannot occupy the same ¼; full-tile unit blocks all 4 ¼s of its diamond.
+3) Pathing / Spawn / Reset / Fight use the same occupancy map Nest + drop.
+4) Visual: pack×3 readable as 3 silhouettes at Nest camera (Balancer feel) — outline/contrast if mushy; do not upscale toward pilot.
+5) Smoke: print each body {entityId, subCell, hp} on Spawn and after one ¼ step — expect 3 ids, 3 distinct subCells when packed on one diamond.
+
+============================================================
+MUST NOT
+============================================================
+- Aim / Shoot / Pin / Lance-wide / Sonic invent in this paste
+- Shared pack HP pool
+- Collapsing packs to 1 body per diamond
+- Putting pilot on ¼ cells
+- Growing Stripekin to pilot scale for readability
+- Unique mat per pack member; denser packs invent
+- HP/dmg one-shot retune (Balancer after occupancy PASS)
+
+============================================================
+QA (one tab — Nest)
+============================================================
+1) Spawn pack×3: smoke shows 3 entityIds, 3 HP pools, 3 ¼ subCells.
+2) Step one Stripekin: moves one ¼; others stay; no shared-pool glitch.
+3) Gasket ¼-steps; pilot full-tile only.
+4) Pack readable as 3 bodies (not one blob).
+5) No Aim chrome changes required for PASS.
+
+Done when: occupancy + move + collision match the law; Balancer can count 3 bodies; Pin feeds stay parked until this PASS.
+
+Researcher CLEAR 2026-09-06: ground-up occupancy/move only; soft-cap OK; Aim parked.

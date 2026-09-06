@@ -1,0 +1,46 @@
+LAST HARVEST — QUARTER OCCUPANCY V1 FIX (IDS / HP / STEPPER)
+Researcher CLEAR 2026-09-06: soft-cap OK; Aim/Pin parked. Spawn smoke asserts uniqueIds===3, distinctSubCells===3, three HP pools; ban Done on aggregate-only.
+One-topic feed. Prior QUARTER_OCCUPANCY_V1 Nest PARTIAL: 3 silhouettes PASS; still one aggregate pack HP (36); no entityIds / subCells / per-body HP smoke; no ¼-step (“No Move stick”). Do not invent Aim/Shoot/Pin, Sonic, Barkback look, or Withdraw.
+
+Names: Stripekin-class = small ¼ units. Pilot = full-tile. Gasket = companion-small. GasketDev = outside assistant.
+
+Balancer Nest PARTIAL evidence (one tab): 3 countable bodies; HP shows 36 aggregate only; Move stick absent / no ¼ step. Pin untouched.
+
+Canon: research/2026-09-06-quarter-occupancy-law.md · BUILD_FEED_QUARTER_OCCUPANCY_V1.txt
+
+============================================================
+GOAL
+============================================================
+Prove three real occupants: 3 entityIds, 3 subCells, 3 HP pools. Small units take one ¼ step via Nest Move. Silhouettes already PASS — don’t restyle.
+
+============================================================
+MUST DO
+============================================================
+1) Nest Spawn pack×3 = three distinct combat entities; ban shared pack HP pool. Split existing total if needed (~12 each if 36).
+2) **Required smoke on Spawn** (and after one step): print `{entityId, subCell, hp}` ×3. Expect 3 unique entityIds, 3 distinct subCells, 3 HP values. Fail Done if aggregate-only or missing fields.
+3) Pack UI bar = **sum-of-living from those three pools** — never the only HP store / sole aggregate 36.
+4) Enable Nest **Move** for small units / pilot as designed: Stripekin-class steps **one ¼ cell**; Gasket shares small stepper; pilot full-tile. Kill “No Move stick” dead-end if Move should exist in Nest Fight/Spawn test.
+5) Collision: no two smalls same ¼; full-tile blocks all 4 ¼s of its diamond.
+6) Soft-cap: shared Stripekin prefab/mat; Nest packs 3–6; ≤~16 animated.
+7) Same occupancy map Nest + drop.
+
+============================================================
+MUST NOT
+============================================================
+- Aim / Shoot / Pin / Lance-wide / Sonic invent
+- Leaving aggregate-only HP with no per-body smoke
+- Collapsing packs to 1 body/diamond
+- Pilot on ¼; Stripekin → pilot scale
+- Unique mat per pack member; denser packs; HP/dmg one-shot retune
+- Restyling silhouettes that already PASS
+
+============================================================
+QA (one tab — Nest)
+============================================================
+1) Spawn pack×3: smoke asserts uniqueIds===3, distinctSubCells===3, three HP pools (not aggregate-only 36).
+2) 3 silhouettes still readable (regression).
+3) Move: one Stripekin steps one ¼; others stay; smoke subCell updates for that id only.
+4) Gasket ¼-steps; pilot full-tile.
+5) No Pin/Aim required for PASS.
+
+Done when: Balancer Nest PASS on ids/HP/subCells + ¼-step (silhouettes already PASS).
