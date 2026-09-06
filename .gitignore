@@ -18,3 +18,10 @@ public/art/
 
 # OS
 .DS_Store
+
+# skill / lookdev PNG dumps — text+scripts OK, not multi-MB sheets
+.grok/skills/**/*.png
+.grok/skills/**/*.jpg
+.grok/skills/**/*.jpeg
+.grok/skills/**/*.webp
+.grok/**/lookdev/**
