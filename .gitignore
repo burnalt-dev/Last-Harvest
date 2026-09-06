@@ -1,5 +1,20 @@
+# deps / build
 node_modules/
 .tanstack/
+.vercel/
 dist/
+
+# secrets
 .env
 .env.*
+
+# local / Grok chrome bloat — do not commit
+backups/
+attachments/
+screenshots/
+artifacts/
+public/art/
+*.log
+
+# OS
+.DS_Store
