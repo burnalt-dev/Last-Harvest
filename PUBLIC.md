@@ -1,8 +1,19 @@
 # Last Harvest — public prototype
 
-Playable Grok Build tree. **Commit game code:** `src/game/`, `public/game/` (+ routes/styles/package as needed).
+Playable Grok Build tree. Chat is not a backup.
 
-**Do not commit:** `backups/`, `attachments/`, `screenshots/`, `artifacts/`, `public/art/`, `node_modules/`, skill PNG dumps.
+## Do commit
+- `src/game/`, `public/game/` (tiles, props, Concepts/`lookdev` roster)
+- `src/routes/`, router, styles, `package.json`, skill **text** (`.md` + scripts under `.grok`)
+- `.gitignore`, `PUBLIC.md`, and other shell when those change
 
-Design vault / feeds live in private [`burnalt-dev/lastharvest`](https://github.com/burnalt-dev/lastharvest).
-Chat is not a backup.
+## Do not commit
+- `.grok/skills/**/*.png` (beastmen/lookdev archives)
+- enemy blit sheets, `node_modules`, Grok chrome
+- `backups/`, `attachments/`, `screenshots/`, `artifacts/`, `public/art/`
+
+## Live-tree cull (keep Concepts roster)
+Delete if present: `public/art/`, root `public/lookdev/`, `public/game/enemies/`, `public/game/companion/gasket.png`.
+Keep: Veldt tiles/props, `public/game/lookdev/` roster.
+
+Private design vault: [`burnalt-dev/lastharvest`](https://github.com/burnalt-dev/lastharvest).
